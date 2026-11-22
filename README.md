@@ -8,7 +8,7 @@ Abre Claude Code en cualquier carpeta de tu computadora y pega:
 
 **1. Agrega el marketplace**
 ```
-/plugin marketplace add https://github.com/{{USUARIO_GITHUB}}/arsenal-trafficker-ai.git
+/plugin marketplace add https://github.com/CapiMario14/arsenal-trafficker-ai.git
 ```
 
 **2. Instala el arsenal**
