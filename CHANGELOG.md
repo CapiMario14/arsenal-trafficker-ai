@@ -2,6 +2,10 @@
 
 Regla: cada vez que cambies una skill, sube el `version` en `plugins/arsenal-trafficker-ai/.claude-plugin/plugin.json` y en `.claude-plugin/marketplace.json`, y anota el cambio aquí. Si la versión no cambia, los alumnos pueden quedarse con la anterior.
 
+## 0.2.0 — 2026-11-21
+- Nuevas skills: `auditoria-cuenta-publicitaria` y `revision-de-campanas`.
+- Nuevo `CONTRATO.md`: qué recibe y entrega cada skill del flujo.
+
 ## 0.1.1 — 2026-11-21
 - Retiradas todas las menciones a marcas de clientes/empleador; la metodología se firma como Capimario y los verticales se nombran genéricamente.
 

@@ -27,7 +27,7 @@ Listo. Cuando publiquemos skills nuevas o mejoras, se actualizan desde aquí.
 | Fase | Skill | Para qué sirve | Estado |
 |---|---|---|---|
 | 1. Diagnóstico | Auditoría de negocio | Leer el negocio antes de pautar | Próximamente |
-| | Auditoría de cuenta publicitaria | Foto inicial de una cuenta que heredas | Próximamente |
+| | `auditoria-cuenta-publicitaria` | Foto inicial de una cuenta que heredas | ✅ |
 | 2. Investigación | `el-rastreador` | Investigación de mercado y competencia (CIF) | ✅ |
 | | Buscador de keywords | Keywords para Google Ads | Próximamente |
 | 3. Estrategia | `estratega-digital-anuncios` | Onboarding, criterio de éxito, plan de medios, buyer persona y objeciones | ✅ |
@@ -37,15 +37,20 @@ Listo. Cuando publiquemos skills nuevas o mejoras, se actualizan desde aquí.
 | | `landing-ghl-con-claude` | Construir y publicar landings en GoHighLevel | ✅ |
 | 5. Implementación | Revisor de pixel y GTM | Revisar pixel, eventos y Tag Manager (Meta y Google) | Próximamente |
 | | Implementador de campañas | Subir la estructura de campañas | Próximamente |
-| 6. Optimización | Revisión de campañas | Diagnóstico periódico de rendimiento | Próximamente |
+| 6. Optimización | `revision-de-campanas` | Diagnóstico periódico de rendimiento y decisiones | ✅ |
 | Complementarias | `domador-de-objeciones` | Responder objeciones y armar propuestas para cerrar clientes | ✅ |
 | | `ghostwriting-linkedin` | Posts de LinkedIn de marca personal por fase de funnel | ✅ |
+
+## Cómo se conectan las skills
+
+Cada skill entrega un bloque "Para la siguiente skill" con un formato común. El detalle está en [CONTRATO.md](CONTRATO.md).
 
 ## MCPs recomendados
 
 Algunas skills necesitan conexiones para funcionar al 100%:
 - **El Rastreador:** Apify (bibliotecas de anuncios) + Supadata (transcripción de videos).
 - **Landing GHL:** Claude in Chrome.
+- **Auditoría y revisión de campañas:** el MCP de Meta Ads (opcional: también funcionan con exports o capturas).
 
 ## Soporte
 
