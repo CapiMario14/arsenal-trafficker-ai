@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Instalar el Arsenal · La Jungla de los Ads</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --night:#04060d;
+    --jungle-1:#07140d;
+    --jungle-2:#0c2416;
+    --jungle-3:#123320;
+    --gold:#f9c933;
+    --gold-deep:#e0a91c;
+    --gold-soft:rgba(249,201,51,.16);
+    --ink:#f4f1e6;
+    --muted:#b9c7b4;
+    --coral:#ff6b5b;
+    --card:rgba(10,30,18,.72);
+    --line:rgba(249,201,51,.28);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Poppins',system-ui,sans-serif;color:var(--ink);line-height:1.6;
+    background:
+      radial-gradient(1200px 600px at 50% 0%, rgba(30,60,120,.18), transparent 60%),
+      linear-gradient(180deg,var(--night) 0%, #050b0a 18%, var(--jungle-1) 34%, var(--jungle-2) 62%, var(--jungle-3) 100%);
+    min-height:100vh;overflow-x:hidden;
+  }
+  /* luciérnagas */
+  .fireflies{position:fixed;inset:0;pointer-events:none;z-index:0}
+  .fireflies i{position:absolute;width:4px;height:4px;border-radius:50%;background:#e9ff9a;box-shadow:0 0 10px 3px rgba(233,255,154,.6);opacity:0;animation:fly 9s ease-in-out infinite}
+  @keyframes fly{0%{opacity:0;transform:translate(0,0)}20%{opacity:.9}50%{transform:translate(30px,-40px)}80%{opacity:.7}100%{opacity:0;transform:translate(-20px,-90px)}}
+  main{position:relative;z-index:1;max-width:980px;margin:0 auto;padding:56px 22px 40px}
+
+  .eyebrow{text-align:center;color:var(--gold);font-weight:600;letter-spacing:.22em;font-size:12px;text-transform:uppercase}
+  h1{font-family:'Bebas Neue',sans-serif;font-weight:400;text-align:center;font-size:clamp(46px,8vw,86px);line-height:.95;margin:14px 0 18px;letter-spacing:.01em;text-shadow:0 4px 0 rgba(0,0,0,.35)}
+  h1 .gold{color:var(--gold)}
+  .lead{max-width:620px;margin:0 auto;text-align:center;color:var(--muted);font-size:16px}
+
+  /* hero */
+  .hero{position:relative;margin:38px auto 10px;border-radius:22px;overflow:hidden;
+    box-shadow:0 0 0 1px var(--line),0 30px 80px rgba(0,0,0,.55),0 0 90px rgba(249,201,51,.12)}
+  .hero video,.hero img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:#05080c}
+  .hero::after{content:"";position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(180deg,transparent 70%,rgba(7,20,13,.85) 100%)}
+
+  /* pasos */
+  .steps{margin-top:46px;display:grid;gap:18px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px 24px;backdrop-filter:blur(6px)}
+  .step{display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start}
+  .num{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-family:'Bebas Neue';font-size:24px;color:var(--night);background:var(--gold);box-shadow:0 0 22px rgba(249,201,51,.45)}
+  h2{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:32px;letter-spacing:.02em;line-height:1.05}
+  h3{font-weight:700;font-size:19px;margin-bottom:4px}
+  .step p{color:var(--muted);font-size:14.5px;margin-top:2px}
+  .cmd{margin-top:14px;display:flex;align-items:center;gap:10px;background:#03080a;border:1px solid rgba(249,201,51,.22);border-radius:12px;padding:12px 12px 12px 16px}
+  .cmd code{flex:1;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13.5px;color:var(--gold);white-space:nowrap;overflow-x:auto;scrollbar-width:thin}
+  .copy{flex:none;border:0;cursor:pointer;font:600 13px 'Poppins';background:var(--gold);color:#1a1300;padding:8px 16px;border-radius:9px;transition:transform .15s,background .15s}
+  .copy:hover{transform:translateY(-1px);background:#ffd84d}
+  .copy.ok{background:#7be38f}
+  .tip{margin-top:14px;border-radius:12px;padding:14px 16px;background:rgba(249,201,51,.07);border:1px dashed rgba(249,201,51,.35);font-size:13.5px;color:var(--muted)}
+  .tip b{color:var(--ink)}
+  .note{margin-top:10px;font-size:13.5px;color:var(--muted)}
+  .note a,.foot a{color:var(--gold)}
+
+  /* gemas / fases */
+  section{margin-top:64px}
+  .sec-head{text-align:center;margin-bottom:26px}
+  .sec-head h2{font-size:clamp(34px,5vw,48px)}
+  .sec-head h2 .gold{color:var(--gold)}
+  .sec-head p{color:var(--muted);max-width:560px;margin:6px auto 0;font-size:15px}
+  .phases{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .phase{position:relative;padding-top:30px}
+  .gem{width:58px;height:58px;margin:-58px auto 12px;clip-path:polygon(50% 0,100% 30%,88% 100%,12% 100%,0 30%);display:grid;place-items:center;animation:float 4.5s ease-in-out infinite}
+  .phase:nth-child(2) .gem{animation-delay:-1.5s}.phase:nth-child(3) .gem{animation-delay:-3s}
+  .gem svg{width:26px;height:26px}
+  .g-blue{background:linear-gradient(160deg,#5fb8ff,#1554b8);box-shadow:0 0 30px rgba(80,170,255,.6)}
+  .g-green{background:linear-gradient(160deg,#9ef06a,#1f8a2d)}
+  .g-purple{background:linear-gradient(160deg,#d38bff,#6a22b8)}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+  .phase h3{text-align:center;font-family:'Bebas Neue';font-weight:400;font-size:28px;letter-spacing:.04em;color:var(--gold)}
+  .phase .sub{text-align:center;color:var(--muted);font-size:13px;margin-bottom:14px}
+  .skill{display:flex;justify-content:space-between;gap:10px;align-items:baseline;padding:9px 0;border-top:1px solid rgba(255,255,255,.07);font-size:14px}
+  .skill span:first-child{font-weight:500}
+  .tag{font-size:11px;font-weight:600;padding:2px 8px;border-radius:99px;white-space:nowrap}
+  .tag.on{background:rgba(123,227,143,.15);color:#8ff0a0}
+  .tag.soon{background:rgba(255,255,255,.06);color:#9aa79a}
+  .extra{margin-top:16px;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;font-size:13.5px;color:var(--muted)}
+  .extra b{color:var(--ink)}
+
+  /* mcps */
+  .mcp{display:grid;grid-template-columns:44px 1fr;gap:16px}
+  .bolt{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--gold-soft);font-size:22px}
+  .mcp ul{margin-top:10px;list-style:none;display:grid;gap:6px;font-size:14px;color:var(--muted)}
+  .mcp li b{color:var(--ink)}
+
+  /* cta */
+  .cta{text-align:center;padding:34px 24px}
+  .cta h2{font-size:clamp(34px,5vw,46px)}
+  .cta h2 .gold{color:var(--gold)}
+  .cta p{color:var(--muted);margin:6px 0 18px}
+  .btn{display:inline-block;background:var(--gold);color:#1a1300;font-weight:700;text-decoration:none;padding:13px 26px;border-radius:12px;box-shadow:0 6px 0 var(--gold-deep);transition:transform .15s}
+  .btn:hover{transform:translateY(-2px)}
+  .foot{text-align:center;color:#8fa08b;font-size:13px;margin-top:40px}
+
+  /* hojas */
+  .leaves{position:relative;height:120px;margin-top:-40px;pointer-events:none;z-index:0}
+  .leaves svg{position:absolute;bottom:0;width:220px;height:auto;opacity:.9}
+  .leaves .l{left:-30px}.leaves .r{right:-30px;transform:scaleX(-1)}
+
+  @media (max-width:760px){
+    .phases{grid-template-columns:1fr;gap:34px}
+    .step,.mcp{grid-template-columns:1fr}
+    .num,.bolt{margin-bottom:-4px}
+    .card{padding:22px 18px}
+  }
+  @media (prefers-reduced-motion:reduce){.gem,.fireflies i{animation:none}}
+</style>
+</head>
+<body>
+<div class="fireflies" aria-hidden="true"></div>
+
+<main>
+  <p class="eyebrow">Marketplace de skills · La Jungla de los Ads</p>
+  <h1>El Arsenal del <span class="gold">Trafficker AI</span>,<br>corriendo en tu Claude Code</h1>
+  <p class="lead">Copia los 2 comandos, pégalos en Claude Code y en menos de 2 minutos tienes la metodología completa dentro de tu terminal. Sin cuenta de GitHub. Las skills nuevas te llegan solas.</p>
+
+  <div class="hero">
+    <video autoplay muted loop playsinline poster="https://d8j0ntlcm91z4.cloudfront.net/user_37uH4LN2kDBKOPzcnuBMlUTZXNJ/hf_20261122_023904_a176d8f5-8382-4b60-a093-30d885cdfd3e.png" aria-label="Capimario descubre las tres gemas del arsenal: Diagnóstico, Estrategia y Ejecución">
+      <source src="https://d8j0ntlcm91z4.cloudfront.net/user_37uH4LN2kDBKOPzcnuBMlUTZXNJ/hf_20261122_024007_64139352-118c-4a1c-a6c3-572e65c11f2b.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="steps">
+    <div class="card step">
+      <div class="num">1</div>
+      <div>
+        <h3>Agrega el marketplace</h3>
+        <p>Abre Claude Code en cualquier carpeta de tu computadora y pega esta línea:</p>
+        <div class="cmd"><code>/plugin marketplace add https://github.com/CapiMario14/arsenal-trafficker-ai.git</code><button class="copy">Copiar</button></div>
+      </div>
+    </div>
+
+    <div class="card step">
+      <div class="num">2</div>
+      <div>
+        <h3>Instala el arsenal</h3>
+        <p>En cuanto se agregue el marketplace, corre:</p>
+        <div class="cmd"><code>/plugin install arsenal-trafficker-ai@jungla-de-los-ads</code><button class="copy">Copiar</button></div>
+        <div class="tip"><b>¿Te sale una versión vieja o no ves una skill nueva?</b> Actualiza el marketplace con esta línea y listo:
+          <div class="cmd"><code>/plugin marketplace update jungla-de-los-ads</code><button class="copy">Copiar</button></div>
+        </div>
+        <p class="note">¿No tienes Claude Code? Revisa el módulo de Claude Code dentro de la comunidad en Skool.</p>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="sec-head">
+      <h2>Las 3 gemas del <span class="gold">arsenal</span></h2>
+      <p>Cada gema es una fase del trabajo del trafficker. Juntas van de punta a punta: del diagnóstico del negocio a la campaña corriendo.</p>
+    </div>
+    <div class="phases">
+      <div class="card phase">
+        <div class="gem g-blue"><svg viewBox="0 0 24 24" fill="none" stroke="#fff6cf" stroke-width="2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5M8 12v-1.5M10.5 12V9M13 12V8"/></svg></div>
+        <h3>Diagnóstico</h3>
+        <p class="sub">Entender el negocio y el mercado</p>
+        <div class="skill"><span>El Rastreador</span><span class="tag on">Disponible</span></div>
+        <div class="skill"><span>Auditoría de negocio</span><span class="tag soon">Próximamente</span></div>
+        <div class="skill"><span>Auditoría de cuenta publicitaria</span><span class="tag soon">Próximamente</span></div>
+        <div class="skill"><span>Buscador de keywords</span><span class="tag soon">Próximamente</span></div>
+      </div>
+      <div class="card phase">
+        <div class="gem g-green"><svg viewBox="0 0 24 24" fill="none" stroke="#fff6cf" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg></div>
+        <h3>Estrategia</h3>
+        <p class="sub">Decidir qué, a quién y cómo pautar</p>
+        <div class="skill"><span>Estratega Digital de Anuncios</span><span class="tag on">Disponible</span></div>
+        <div class="skill"><span>Revisión de campañas</span><span class="tag soon">Próximamente</span></div>
+      </div>
+      <div class="card phase">
+        <div class="gem g-purple"><svg viewBox="0 0 24 24" fill="none" stroke="#fff6cf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7l8 5-8 5z"/></svg></div>
+        <h3>Ejecución</h3>
+        <p class="sub">Producir, implementar y lanzar</p>
+        <div class="skill"><span>Landing en GHL con Claude</span><span class="tag on">Disponible</span></div>
+        <div class="skill"><span>Changuito (guiones de anuncios)</span><span class="tag soon">Próximamente</span></div>
+        <div class="skill"><span>Producción de anuncios</span><span class="tag soon">Próximamente</span></div>
+        <div class="skill"><span>Copywriter (mails y landing)</span><span class="tag soon">Próximamente</span></div>
+        <div class="skill"><span>Revisor de pixel y GTM</span><span class="tag soon">Próximamente</span></div>
+        <div class="skill"><span>Implementador de campañas</span><span class="tag soon">Próximamente</span></div>
+      </div>
+    </div>
+    <p class="extra"><span>Bonus incluidos:</span> <b>Domador de Objeciones</b> · <b>Ghostwriting LinkedIn</b></p>
+  </section>
+
+  <section>
+    <div class="card mcp">
+      <div class="bolt">⚡</div>
+      <div>
+        <h3>Activa tus MCPs (opcional pero recomendado)</h3>
+        <p class="note" style="margin-top:2px">Las skills se potencian con MCPs: conexiones a herramientas externas. Sin ellos, algunas funcionan a medias.</p>
+        <ul>
+          <li><b>El Rastreador:</b> Apify (bibliotecas de anuncios) + Supadata (transcripción de videos).</li>
+          <li><b>Landing en GHL:</b> Claude in Chrome.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="card cta">
+      <h2>¿Algún problema con el <span class="gold">setup</span>?</h2>
+      <p>Pregunta dentro de la comunidad de La Jungla de los Ads en Skool.</p>
+      <a class="btn" href="https://www.skool.com/meta-mastery-5027/about">Ir a la comunidad</a>
+    </div>
+  </section>
+
+  <p class="foot">@capimario.pe · La Jungla de los Ads</p>
+</main>
+
+<div class="leaves" aria-hidden="true">
+  <svg class="l" viewBox="0 0 220 140"><path d="M10 140C30 80 70 40 130 20 110 70 80 110 10 140Z" fill="#1d5a2c"/><path d="M60 140C70 100 110 70 170 60 140 100 110 125 60 140Z" fill="#2b7a3a"/><path d="M0 140C10 115 30 95 70 85 50 115 30 130 0 140Z" fill="#164a24"/></svg>
+  <svg class="r" viewBox="0 0 220 140"><path d="M10 140C30 80 70 40 130 20 110 70 80 110 10 140Z" fill="#1d5a2c"/><path d="M60 140C70 100 110 70 170 60 140 100 110 125 60 140Z" fill="#2b7a3a"/><path d="M0 140C10 115 30 95 70 85 50 115 30 130 0 140Z" fill="#164a24"/></svg>
+</div>
+
+<script>
+  // Copiar comandos
+  document.querySelectorAll('.copy').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var text = btn.parentElement.querySelector('code').textContent.trim();
+      var done = function(){ btn.textContent='¡Copiado!'; btn.classList.add('ok'); setTimeout(function(){btn.textContent='Copiar';btn.classList.remove('ok')},1800); };
+      try{
+        navigator.clipboard.writeText(text).then(done, function(){ selectCode(btn); });
+      }catch(e){ selectCode(btn); }
+    });
+  });
+  function selectCode(btn){
+    var code = btn.parentElement.querySelector('code');
+    var r = document.createRange(); r.selectNodeContents(code);
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    btn.textContent='Ctrl+C';
+  }
+  // Luciérnagas
+  var ff = document.querySelector('.fireflies');
+  for (var i=0;i<22;i++){
+    var f=document.createElement('i');
+    f.style.left=Math.random()*100+'%';
+    f.style.top=(35+Math.random()*65)+'%';
+    f.style.animationDelay=(Math.random()*9)+'s';
+    f.style.animationDuration=(7+Math.random()*6)+'s';
+    ff.appendChild(f);
+  }
+</script>
+</body>
+</html>
