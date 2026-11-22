@@ -1,0 +1,33 @@
+<script>
+(function(){
+var root=document.querySelector(".arsenal");if(!root)return;
+
+  // Copiar comandos
+  root.querySelectorAll('.copy').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var text = btn.parentElement.querySelector('code').textContent.trim();
+      var done = function(){ btn.textContent='¡Copiado!'; btn.classList.add('ok'); setTimeout(function(){btn.textContent='Copiar';btn.classList.remove('ok')},1800); };
+      try{
+        navigator.clipboard.writeText(text).then(done, function(){ selectCode(btn); });
+      }catch(e){ selectCode(btn); }
+    });
+  });
+  function selectCode(btn){
+    var code = btn.parentElement.querySelector('code');
+    var r = document.createRange(); r.selectNodeContents(code);
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    btn.textContent='Ctrl+C';
+  }
+  // Luciérnagas
+  var ff = root.querySelector('.fireflies');
+  for (var i=0;i<22;i++){
+    var f=document.createElement('i');
+    f.style.left=Math.random()*100+'%';
+    f.style.top=(35+Math.random()*65)+'%';
+    f.style.animationDelay=(Math.random()*9)+'s';
+    f.style.animationDuration=(7+Math.random()*6)+'s';
+    ff.appendChild(f);
+  }
+
+})();
+</script>
