@@ -1,0 +1,18 @@
+{
+  "name": "jungla-de-los-ads",
+  "owner": {
+    "name": "Mario Díaz (Capimario) — La Jungla de los Ads"
+  },
+  "metadata": {
+    "description": "Arsenal de skills de Claude para traffickers: del diagnóstico del negocio a la campaña corriendo.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "arsenal-trafficker-ai",
+      "source": "./plugins/arsenal-trafficker-ai",
+      "description": "Skills oficiales de La Jungla de los Ads: auditoría, investigación, estrategia, producción, implementación y optimización de campañas.",
+      "version": "0.1.0"
+    }
+  ]
+}

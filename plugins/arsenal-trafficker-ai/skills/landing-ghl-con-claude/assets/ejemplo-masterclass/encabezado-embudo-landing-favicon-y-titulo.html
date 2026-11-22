@@ -1,0 +1,30 @@
+<script>
+(function(){
+  /* Título de la pestaña e ícono animado: una gota azul cae al agua y las ondas se expanden (registro y gracias).
+     8 fotogramas precalculados que se alternan cada 160 ms. Sin librerías, sin pedidos de red. */
+  var TITULOS={registro:'{{TITULO_DE_LA_PAGINA_DE_REGISTRO}}',gracias:'Registro exitoso | {{NOMBRE_DEL_EVENTO}}'};
+  var N=8,fotogramas=[],k=0;
+  function onda(p){
+    var r=(6+9*p).toFixed(2),a=Math.pow(1-p,1.2).toFixed(2),s=(3.2-1.6*p).toFixed(2);
+    return '<circle cx="16" cy="16" r="'+r+'" fill="none" stroke="#0038FF" stroke-width="'+s+'" stroke-opacity="'+a+'"/>';
+  }
+  for(var i=0;i<N;i++){
+    var svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">'+
+      '<circle cx="16" cy="16" r="5" fill="#0038FF"/>'+onda(i/N)+onda(((i/N)+0.5)%1)+'</svg>';
+    fotogramas.push('data:image/svg+xml,'+encodeURIComponent(svg));
+  }
+  function titulo(){
+    var t=location.pathname.indexOf('gracias')>-1?TITULOS.gracias:TITULOS.registro;
+    if(document.title!==t){document.title=t;}
+  }
+  function icono(href){
+    var l=document.createElement('link');
+    l.rel='icon';l.type='image/svg+xml';l.href=href;
+    var viejos=document.querySelectorAll('link[rel~="icon"]');
+    for(var j=0;j<viejos.length;j++){viejos[j].parentNode.removeChild(viejos[j]);}
+    document.head.appendChild(l);
+  }
+  titulo();icono(fotogramas[0]);
+  setInterval(function(){titulo();k=(k+1)%N;icono(fotogramas[k]);},160);
+})();
+</script>

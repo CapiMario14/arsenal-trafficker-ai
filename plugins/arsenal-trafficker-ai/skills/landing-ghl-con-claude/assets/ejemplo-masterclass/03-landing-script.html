@@ -1,0 +1,49 @@
+<script>
+(function(){
+  /* Barra fija del celular: se oculta mientras se ve algún botón de la página o el formulario */
+  var bar=document.getElementById('sticky'),vis=new Map();
+  if(bar&&'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(x){vis.set(x.target,x.isIntersecting);});
+      var any=false;vis.forEach(function(v){if(v)any=true;});
+      bar.hidden=any;
+    });
+    document.querySelectorAll('[data-cta]').forEach(function(el){io.observe(el);});
+    var f=document.getElementById('registro');if(f)io.observe(f);
+  }
+
+  /* Slider de fotos: se desliza a mano y avanza solo cada 4 s mientras se ve y nadie lo toca */
+  var box=document.getElementById('refs');
+  if(box){
+    var track=box.querySelector('.track'),slides=track.children,holder=box.querySelector('.dots'),dots=[],cur=0,raf=0,hold=false,onScreen=false;
+    /* los puntos se crean solos, uno por foto */
+    for(var q=0;q<slides.length;q++){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Foto '+(q+1));b.setAttribute('aria-current',q===0?'true':'false');holder.appendChild(b);dots.push(b);}
+    var go=function(n){var s=slides[n];if(s)track.scrollTo({left:s.offsetLeft,behavior:'smooth'});};
+    var sync=function(){
+      var x=track.scrollLeft,best=0,d=1e9;
+      for(var k=0;k<slides.length;k++){var dd=Math.abs(slides[k].offsetLeft-x);if(dd<d){d=dd;best=k;}}
+      if(x>=track.scrollWidth-track.clientWidth-2){best=slides.length-1;}
+      cur=best;
+      for(var j=0;j<dots.length;j++){dots[j].setAttribute('aria-current',j===best?'true':'false');}
+    };
+    track.addEventListener('scroll',function(){clearTimeout(raf);raf=setTimeout(sync,60);},{passive:true});
+    for(var j=0;j<dots.length;j++){(function(n){dots[n].addEventListener('click',function(){go(n);});})(j);}
+    var stop=function(){hold=true;},start=function(){hold=false;};
+    ['pointerdown','touchstart','mouseenter','focusin'].forEach(function(e){box.addEventListener(e,stop,{passive:true});});
+    ['mouseleave','focusout','touchend'].forEach(function(e){box.addEventListener(e,function(){setTimeout(start,2500);},{passive:true});});
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(es){onScreen=es[0].isIntersecting;}).observe(box);
+    }
+    if(!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)){
+      setInterval(function(){
+        if(hold||!onScreen||document.hidden)return;
+        go((cur+1)%slides.length);
+      },4000);
+    }
+  }
+
+  /* form_embed.js se carga aparte y sin bloquear la página (antes la frenaba hasta 21 s) */
+  function loadEmbed(){var s=document.createElement('script');s.src='https://link.msgsync.com/js/form_embed.js';s.async=true;document.body.appendChild(s);}
+  if(document.readyState==='complete'){setTimeout(loadEmbed,0);}else{window.addEventListener('load',loadEmbed);}
+})();
+</script>

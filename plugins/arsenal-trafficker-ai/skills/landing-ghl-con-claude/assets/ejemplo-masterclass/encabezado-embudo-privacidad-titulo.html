@@ -1,0 +1,9 @@
+<script>
+(function(){
+  /* Solo para el embudo de la política de privacidad: título de la pestaña. */
+  var T='Política de privacidad | {{NOMBRE_DEL_EVENTO}}';
+  function titulo(){if(document.title!==T){document.title=T;}}
+  titulo();
+  setInterval(titulo,900);
+})();
+</script>
