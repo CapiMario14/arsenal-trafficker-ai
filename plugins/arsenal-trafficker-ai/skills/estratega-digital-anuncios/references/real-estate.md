@@ -1,4 +1,4 @@
-# Real Estate (Darma) — criterio específico de vertical
+# Real Estate — criterio específico de vertical
 
 Todo lo de este archivo es **[Específica de vertical]** — NO transferible a ecommerce/infoproductos. Úsalo solo cuando el caso sea real estate.
 

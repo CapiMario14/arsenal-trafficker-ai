@@ -1,17 +1,17 @@
 ---
 name: estratega-digital-anuncios
 description: >-
-  Metodología propia de Mi Capi (Darma / High Leads) para auditar cuentas publicitarias, diagnosticar caídas de performance, evaluar criterios de éxito/fracaso de campañas, estructurar onboarding de clientes, armar plan de medios, y mapear buyer persona + objeciones a nivel de anuncio. Úsala siempre que el usuario pida evaluar si una campaña va bien o mal, diagnosticar por qué subió el CPL o costo, decidir si matar o sostener una campaña, estructurar un onboarding de cliente nuevo, armar un plan de medios, definir segmentación de audiencia vs ángulo creativo, distribuir anuncios por nivel de consciencia, o construir un buyer persona o mapa de objeciones para pauta paga. NO es una skill de mejores prácticas genéricas de marketing, es el criterio específico y validado de Mi Capi, que en varios puntos contradice el sentido común del rubro (ej. no usar CTR aislado, no usar buyer persona demográfico clásico).
+  Metodología propia de Capimario para auditar cuentas publicitarias, diagnosticar caídas de performance, evaluar criterios de éxito/fracaso de campañas, estructurar onboarding de clientes, armar plan de medios, y mapear buyer persona + objeciones a nivel de anuncio. Úsala siempre que el usuario pida evaluar si una campaña va bien o mal, diagnosticar por qué subió el CPL o costo, decidir si matar o sostener una campaña, estructurar un onboarding de cliente nuevo, armar un plan de medios, definir segmentación de audiencia vs ángulo creativo, distribuir anuncios por nivel de consciencia, o construir un buyer persona o mapa de objeciones para pauta paga. NO es una skill de mejores prácticas genéricas de marketing, es el criterio específico y validado de Capimario, que en varios puntos contradice el sentido común del rubro (ej. no usar CTR aislado, no usar buyer persona demográfico clásico).
 ---
 
-# Estratega Digital de Anuncios — Metodología Mi Capi
+# Estratega Digital de Anuncios — Metodología Capimario
 
-Framework propio de Mi Capi (trafficker/consultor) para Darma (consultoría real estate multi-cliente) y High Leads (paid media para ecommerce/infoproductos). Cada regla está etiquetada:
+Framework propio de Capimario (trafficker/consultor), construido sobre campañas reales de real estate y de ecommerce/infoproductos. Cada regla está etiquetada:
 - **[Universal]** = mecanismo aplicable a cualquier vertical, la variable cambia pero la lógica no.
 - **[Específica — Real Estate]** o **[Específica — Ecommerce/Infoproductos]** = criterio propietario de un vertical, NO transferible al otro.
-- **[Confirmado]** = validado en 3+ casos reales. **[Hipótesis]** = mencionado por Mi Capi pero aún sin validar contra suficiente evidencia — trátalo como orientación, no como regla dura, y dilo explícitamente si lo aplicas.
+- **[Confirmado]** = validado en 3+ casos reales. **[Hipótesis]** = mencionado por Capimario pero aún sin validar contra suficiente evidencia — trátalo como orientación, no como regla dura, y dilo explícitamente si lo aplicas.
 
-Al analizar cualquier caso, primero identifica el vertical (real estate/Darma vs ecommerce-infoproductos/High Leads) antes de aplicar cifras — nunca cruces benchmarks entre verticales.
+Al analizar cualquier caso, primero identifica el vertical (real estate vs ecommerce-infoproductos) antes de aplicar cifras — nunca cruces benchmarks entre verticales.
 
 ## Framework general (3 fases)
 
@@ -80,7 +80,7 @@ Regla de proceso fija: revisa la cuenta DIARIAMENTE, pero solo interviene/cambia
 - **Niveles de consciencia (Eugene Schwartz)**: inconsciente → consciente del problema → consciente de la solución → consciente del producto → más consciente. Base de la regla de distribución de anuncios arriba.
 - **Niveles de sofisticación de mercado (mismo autor)**: distinto de consciencia — mide cuánto ha visto ya el mercado esa promesa/tipo de producto, no cuánto sabe la persona de su propio problema. En mercados de sofisticación alta ya no se compite repitiendo la misma promesa mejor dicha, se necesita ángulo/mecanismo distinto. Conecta con el CIF (`references/cif.md`), sección "¿Qué no está diciendo el mercado?" — ese proceso es la forma práctica de detectar sofisticación y encontrar el espacio no saturado.
 - **ABO vs. CBO**: ABO (Ad Set Budget Optimization) se usa en FASE DE TESTEO de ángulos — da control manual e igualdad de condiciones entre ad sets. CBO (Campaign Budget Optimization) se usa en FASE DE ESCALAMIENTO, una vez hay un ángulo ganador validado con data real — ahí se deja que Meta optimice dinámicamente porque ya no se está comparando, se está maximizando.
-- **Pendiente, no apliques todavía**: AIDA/PAS como estructura de copy por nivel de consciencia, y curva de difusión de Rogers. Mencionados por Mi Capi pero sin confirmación explícita de que entren a la metodología — si el usuario pregunta por esto, dile que está pendiente de decisión, no lo apliques como si ya fuera regla.
+- **Pendiente, no apliques todavía**: AIDA/PAS como estructura de copy por nivel de consciencia, y curva de difusión de Rogers. Mencionados por Capimario pero sin confirmación explícita de que entren a la metodología — si el usuario pregunta por esto, dile que está pendiente de decisión, no lo apliques como si ya fuera regla.
 
 ## Buyer persona reformulado + mapeo de objeciones
 
@@ -110,6 +110,6 @@ Regla de proceso fija: revisa la cuenta DIARIAMENTE, pero solo interviene/cambia
 
 ## Cuándo ir a las referencias
 
-- Cifras y topes concretos de Real Estate (Darma) → `references/real-estate.md`
-- Cifras y criterio de Ecommerce/Infoproductos (High Leads) → `references/ecommerce-infoproductos.md`
+- Cifras y topes concretos de Real Estate → `references/real-estate.md`
+- Cifras y criterio de Ecommerce/Infoproductos → `references/ecommerce-infoproductos.md`
 - Proceso completo de investigación de mercado/competencia (CIF, 14 bloques) → `references/cif.md`

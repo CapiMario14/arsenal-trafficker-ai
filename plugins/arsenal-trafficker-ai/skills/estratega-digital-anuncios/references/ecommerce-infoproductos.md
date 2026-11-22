@@ -1,4 +1,4 @@
-# Ecommerce / Infoproductos (High Leads) — criterio específico de vertical
+# Ecommerce / Infoproductos — criterio específico de vertical
 
 Todo lo de este archivo es **[Específica de vertical]** — NO transferible a real estate. Úsalo solo cuando el caso sea ecommerce o infoproductos.
 
@@ -16,4 +16,4 @@ Públicos personalizados desde interacciones orgánicas masivas (comentarios/vie
 
 ## Nivel de sofisticación de mercado — nota de aplicación
 
-La curva de difusión de innovaciones de Rogers fue mencionada como potencialmente más aplicable a High Leads que a Darma (relevante para decidir cuánto contenido "educar concepto" vs. "vender producto" directamente), pero está marcada como **pendiente de decisión** en el `SKILL.md` principal — no la apliques como regla confirmada todavía.
+La curva de difusión de innovaciones de Rogers fue mencionada como potencialmente más aplicable a ecommerce/infoproductos que a real estate (relevante para decidir cuánto contenido "educar concepto" vs. "vender producto" directamente), pero está marcada como **pendiente de decisión** en el `SKILL.md` principal — no la apliques como regla confirmada todavía.
