@@ -1,11 +1,18 @@
 ---
 name: creador-de-campanas-jads
-description: Creador de Campañas de La Jungla de los Ads (metodología Capimario). Guía al trafficker para elegir el objetivo publicitario correcto, definir la estructura (testeo con ABO o escalado con CBO), las segmentaciones, el presupuesto y los anuncios, y monta la campaña en Meta Ads por MCP dejándola en pausa para que el trafficker la revise y la active. Úsala siempre que el usuario quiera crear, armar, montar, subir o lanzar una campaña de Meta (Facebook/Instagram), definir la estructura de una campaña nueva, testear ángulos o segmentaciones, o escalar campañas, aunque no diga "skill" ni "campaña". NO evalúa campañas ya activas (eso es revision-de-campanas-jads) ni define la estrategia completa de un cliente (eso es estratega-digital-anuncios-jads).
+description: Creador de Campañas de La Jungla de los Ads (metodología Capimario). Guía al trafficker para elegir el objetivo publicitario correcto, definir la estructura (testeo con ABO o escalado con CBO), las segmentaciones, el presupuesto y los anuncios, y monta la campaña por MCP dejándola en pausa para que el trafficker la revise y la active. La estructura aplica a cualquier canal digital (Meta, TikTok, Google); la implementación por MCP es en Meta Ads. Úsala siempre que el usuario quiera crear, armar, montar, subir o lanzar una campaña de Meta (Facebook/Instagram), TikTok o Google, definir la estructura de una campaña nueva, testear ángulos o segmentaciones, o escalar campañas, aunque no diga "skill" ni "campaña". NO evalúa campañas ya activas (eso es revision-de-campanas-jads) ni define la estrategia completa de un cliente (eso es estratega-digital-anuncios-jads).
 ---
 
 # Creador de Campañas — JADS
 
 Monta campañas de Meta Ads con criterio: primero el objetivo correcto, después la estructura, la segmentación, el presupuesto y los anuncios, y al final la implementación por MCP **en pausa**. La consigna de fondo: **la data manda**. Sin data, se testea; con data, se escala.
+
+## Canales
+**La estructura de esta skill aplica a cualquier canal digital: Meta, TikTok o Google.** La lógica es la misma (objetivo correcto, testeo antes que escalado, 2–3 segmentaciones o ángulos, mínimo 3 anuncios, presupuesto mínimo por grupo, nomenclatura, resumen antes de implementar). Lo que varía un poco es el nivel de anuncios y los nombres de cada plataforma:
+- **Meta:** campaña → conjunto de anuncios → anuncio. Implementación por MCP, en pausa.
+- **TikTok:** campaña → grupo de anuncios → anuncio. El presupuesto por grupo equivale al ABO y la optimización del presupuesto de campaña al CBO. Usa los objetivos equivalentes de TikTok y sus formatos (video vertical).
+- **Google:** campaña → grupo de anuncios → anuncio. En Google el presupuesto vive en la campaña, no en el grupo; para testear con presupuesto controlado por segmentación, cada segmentación va en su propia campaña. Los anuncios cambian de forma (títulos y descripciones de búsqueda, recursos de Performance Max o YouTube).
+- **Si el canal no es Meta y no hay un MCP conectado para ese canal:** la skill entrega el plan completo, con nomenclatura y resumen, para que el trafficker lo monte a mano.
 
 ## Regla de oro
 Nunca armes una campaña "desde cero" solo porque te la piden. Antes necesitas saber **qué quiere conseguir el negocio** y **qué historial tiene la cuenta**. Si el trafficker no tiene claro el objetivo publicitario, **lo guías obligatoriamente hasta que lo tenga 100% claro**. No avanzas al siguiente paso sin eso.

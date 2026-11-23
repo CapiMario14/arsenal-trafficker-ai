@@ -5,14 +5,14 @@
   },
   "metadata": {
     "description": "Arsenal de skills de Claude para traffickers: del diagnóstico del negocio a la campaña corriendo.",
-    "version": "0.3.0"
+    "version": "0.3.1"
   },
   "plugins": [
     {
       "name": "arsenal-trafficker-ai",
       "source": "./plugins/arsenal-trafficker-ai",
       "description": "Skills oficiales de La Jungla de los Ads: auditoría, investigación, estrategia, producción, implementación y optimización de campañas.",
-      "version": "0.3.0"
+      "version": "0.3.1"
     }
   ]
 }
