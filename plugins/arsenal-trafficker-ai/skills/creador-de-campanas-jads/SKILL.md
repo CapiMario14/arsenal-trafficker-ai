@@ -1,6 +1,6 @@
 ---
 name: creador-de-campanas-jads
-description: Creador de Campañas de La Jungla de los Ads (metodología Capimario). Guía al trafficker para elegir el objetivo publicitario correcto, definir la estructura (testeo con ABO o escalado con CBO), las segmentaciones, el presupuesto y los anuncios, y monta la campaña por MCP dejándola en pausa para que el trafficker la revise y la active. La estructura aplica a cualquier canal digital (Meta, TikTok, Google); la implementación por MCP es en Meta Ads. Úsala siempre que el usuario quiera crear, armar, montar, subir o lanzar una campaña de Meta (Facebook/Instagram), TikTok o Google, definir la estructura de una campaña nueva, testear ángulos o segmentaciones, o escalar campañas, aunque no diga "skill" ni "campaña". NO evalúa campañas ya activas (eso es revision-de-campanas-jads) ni define la estrategia completa de un cliente (eso es estratega-digital-anuncios-jads).
+description: Creador de Campañas de La Jungla de los Ads (metodología Capimario). Guía al trafficker para elegir el objetivo publicitario correcto, definir la estructura (testeo con ABO o escalado con CBO), las segmentaciones, el presupuesto y los anuncios, y monta la campaña por MCP dejándola en pausa para que el trafficker la revise y la active. La estructura aplica a cualquier canal digital (Meta, TikTok, Google); la implementación por MCP es en Meta Ads. Úsala siempre que el usuario quiera crear, armar, montar, subir o lanzar una campaña de Meta (Facebook/Instagram), TikTok o Google, definir la estructura de una campaña nueva, testear ángulos o segmentaciones, o escalar campañas, aunque no diga "skill" ni "campaña". NO evalúa campañas ya activas (eso es optimizador-de-campanas-jads) ni define la estrategia completa de un cliente (eso es estratega-digital-anuncios-jads).
 ---
 
 # Creador de Campañas — JADS
@@ -150,5 +150,5 @@ Si alguna llamada del MCP falla, explica el error en lenguaje simple y qué hace
 ## Lo que esta skill NO hace
 - No activa campañas ni gasta presupuesto.
 - No inventa copies, títulos, descripciones ni creativos: los entrega el trafficker.
-- No evalúa campañas activas: eso es `revision-de-campanas-jads`.
+- No evalúa campañas activas: eso es `optimizador-de-campanas-jads`.
 - No define la estrategia completa del cliente: eso es `estratega-digital-anuncios-jads`.

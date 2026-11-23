@@ -2,6 +2,10 @@
 
 Regla: cada vez que cambies una skill, sube el `version` en `plugins/arsenal-trafficker-ai/.claude-plugin/plugin.json` y en `.claude-plugin/marketplace.json`, y anota el cambio aquí. Si la versión no cambia, los alumnos pueden quedarse con la anterior.
 
+## 0.5.0 — 2026-11-23
+- `revision-de-campanas-jads` reconstruida y renombrada a `optimizador-de-campanas-jads`: análisis por capas, métricas de decisión vs. contexto con referencias, UTMs, CAC por canal, decisiones (escalar, optimizar, apagar, no tocar) y reporte HTML.
+- `auditoria-cuenta-publicitaria-jads`: CTR único mes a mes y línea base (`linea-base-[cliente].md`) para el optimizador.
+
 ## 0.4.0 — 2026-11-23
 - `auditoria-cuenta-publicitaria-jads` reconstruida con la metodología validada: preguntas previas, data de 3–6 meses por MCP, costo por resultado frente al ticket, pipeline comercial con export reducido del CRM, y reporte HTML (resultados por mes, vistas de campaña, conjunto y anuncio, qué funciona, meta realista, plan de acción).
 
@@ -13,7 +17,7 @@ Regla: cada vez que cambies una skill, sube el `version` en `plugins/arsenal-tra
 - Todas las skills renombradas con el sufijo `-jads`.
 
 ## 0.2.0 — 2026-11-21
-- Nuevas skills: `auditoria-cuenta-publicitaria-jads` y `revision-de-campanas-jads`.
+- Nuevas skills: `auditoria-cuenta-publicitaria-jads` y `optimizador-de-campanas-jads`.
 - Nuevo `CONTRATO.md`: qué recibe y entrega cada skill del flujo.
 
 ## 0.1.1 — 2026-11-21

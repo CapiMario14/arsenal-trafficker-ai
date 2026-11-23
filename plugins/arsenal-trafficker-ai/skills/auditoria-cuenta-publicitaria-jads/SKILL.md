@@ -1,6 +1,6 @@
 ---
 name: auditoria-cuenta-publicitaria-jads
-description: Auditoría de cuenta publicitaria de La Jungla de los Ads (metodología Capimario). Hace preguntas previas al trafficker, saca la data de los últimos 3 a 6 meses por MCP (Meta; TikTok y Google con sus diferencias), cruza la pauta con el pipeline comercial del CRM, ubica dónde se queda la plata y entrega un reporte HTML visual con resultados por mes, vista de campañas, conjuntos y anuncios, qué funciona y por qué, meta realista y plan de acción. Úsala siempre que el usuario diga "audita esta cuenta", "revisa la cuenta del cliente", "heredé una cuenta", "diagnóstico de la cuenta", "qué está mal en esta cuenta" o pida un reporte de auditoría, aunque no diga "auditoría". NO es para la revisión diaria o semanal de campañas activas (eso es revision-de-campanas-jads) ni para crear campañas (eso es creador-de-campanas-jads).
+description: Auditoría de cuenta publicitaria de La Jungla de los Ads (metodología Capimario). Hace preguntas previas al trafficker, saca la data de los últimos 3 a 6 meses por MCP (Meta; TikTok y Google con sus diferencias), cruza la pauta con el pipeline comercial del CRM, ubica dónde se queda la plata y entrega un reporte HTML visual con resultados por mes, vista de campañas, conjuntos y anuncios, qué funciona y por qué, meta realista y plan de acción. Úsala siempre que el usuario diga "audita esta cuenta", "revisa la cuenta del cliente", "heredé una cuenta", "diagnóstico de la cuenta", "qué está mal en esta cuenta" o pida un reporte de auditoría, aunque no diga "auditoría". NO es para la revisión diaria o semanal de campañas activas (eso es optimizador-de-campanas-jads) ni para crear campañas (eso es creador-de-campanas-jads).
 ---
 
 # Auditoría de cuenta publicitaria — JADS
@@ -48,6 +48,7 @@ Compara el costo por resultado con el precio del producto. Ejemplo: un lead de $
 
 ### 3.3 Comparación mes a mes
 - Inversión vs. cantidad de resultados, mes a mes.
+- **CTR único (porcentaje de clics en el enlace) mes a mes**, para ver cómo evolucionó en los 3–6 meses. Referencia: 1.5% aceptable, 1.5–3% sobre el promedio, más de 3% muy bueno (en high ticket puede aceptarse cerca de 1%, comparando varios anuncios).
 - **Variaciones de inversión:** si un mes se invirtió mucho menos que otro, o hubo pausas, señálalo como hallazgo; cambia cómo se leen los resultados y afecta el aprendizaje de la plataforma.
 - **Métricas de negocio:** tasa de conversión, costo de adquisición de cliente (CAC) y ROAS. La cuenta publicitaria muchas veces no las tiene (sobre todo en mensajería): pídelas al cliente o calcúlalas con el CRM. Si no existen, márcalo como hueco.
 - **Ajusta antes de juzgar [Universal, Confirmado]:** país o ciudad, temporada (caro en Black Friday, Navidad y julio; barato de enero a marzo) y tipo de campaña.
@@ -94,10 +95,12 @@ Genera el reporte con la plantilla `assets/plantilla-reporte.html`: copia la pla
 12. **Plan de acción:** separado en **Crítico** (corregir ya), **Mejora** (puede esperar) y **Preferencia** (no justifica cambiar lo que funciona).
 13. **Huecos de información y nivel de confianza** de cada conclusión.
 
-Además del reporte, deja en el chat un bloque **"Para la siguiente skill"** con la ficha del negocio, el benchmark y el diagnóstico, en el formato de `CONTRATO.md`.
+Además del reporte:
+- **Guarda la línea base** en `linea-base-[cliente].md`, en la carpeta del cliente, para que `optimizador-de-campanas-jads` parta de ahí: rango de costo por resultado aceptable por objetivo, benchmark por mes, CTR único de referencia, segmentaciones y anuncios ganadores, tasas de conversión de plataforma y de negocio, y estado del pipeline.
+- Deja en el chat un bloque **"Para la siguiente skill"** con la ficha del negocio, el benchmark y el diagnóstico, en el formato de `CONTRATO.md`.
 
 ## Lo que esta skill NO hace
 - No modifica la cuenta: solo lee.
-- No hace la revisión diaria o semanal de campañas activas: eso es `revision-de-campanas-jads`.
+- No hace la revisión diaria o semanal de campañas activas: eso es `optimizador-de-campanas-jads`.
 - No crea campañas: eso es `creador-de-campanas-jads`.
 - No define la estrategia completa: eso es `estratega-digital-anuncios-jads`.

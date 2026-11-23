@@ -37,7 +37,7 @@ Listo. Cuando publiquemos skills nuevas o mejoras, se actualizan desde aquí.
 | | `landing-ghl-con-claude-jads` | Construir y publicar landings en GoHighLevel | ✅ |
 | 5. Implementación | Revisor de pixel y GTM | Revisar pixel, eventos y Tag Manager (Meta y Google) | Próximamente |
 | | `creador-de-campanas-jads` | Objetivo, estructura (testeo ABO / escalado CBO), segmentación y montaje de la campaña en Meta por MCP, en pausa | ✅ |
-| 6. Optimización | `revision-de-campanas-jads` | Diagnóstico periódico de rendimiento y decisiones | ✅ |
+| 6. Optimización | `optimizador-de-campanas-jads` | Análisis por capas y decisiones: escalar, optimizar, apagar o no tocar, con reporte HTML | ✅ |
 | Complementarias | `domador-de-objeciones-jads` | Responder objeciones y armar propuestas para cerrar clientes | ✅ |
 | | `ghostwriting-linkedin-jads` | Posts de LinkedIn de marca personal por fase de funnel | ✅ |
 

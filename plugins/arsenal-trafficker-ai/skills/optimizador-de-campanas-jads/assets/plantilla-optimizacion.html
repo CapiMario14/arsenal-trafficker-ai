@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Optimización de campañas · La Jungla de los Ads</title>
+<!--
+  PLANTILLA DEL REPORTE DE OPTIMIZACIÓN — instrucciones para Claude:
+  1. No toques el HTML, el CSS ni el script de render.
+  2. Reemplaza SOLO el objeto DATA (script con id "data") con los datos reales.
+  3. estado: "ok" (verde), "warn" (amarillo) o "bad" (rojo). Miniaturas en base64; preview es opcional.
+  4. pipeline en null si no hay CRM. Guarda como optimizacion-[cuenta]-[DD-MM-AAAA].html.
+-->
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  :root{--bg:#07140d;--bg2:#0c2416;--card:#0f2a1a;--line:rgba(249,201,51,.22);--gold:#f9c933;--ink:#f4f1e6;--muted:#b9c7b4;--green:#7be38f;--red:#ff6b5b;--amber:#ffc857}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Poppins',system-ui,sans-serif;color:var(--ink);background:linear-gradient(180deg,#04060d 0%,var(--bg) 20%,var(--bg2) 100%);min-height:100vh;line-height:1.55}
+  main{max-width:1180px;margin:0 auto;padding:40px 20px 60px}
+  header{border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:26px}
+  .eyebrow{color:var(--gold);font-size:12px;letter-spacing:.2em;font-weight:600;text-transform:uppercase}
+  h1{font-family:'Bebas Neue';font-weight:400;font-size:52px;line-height:1;margin:6px 0}
+  .meta{color:var(--muted);font-size:14px}
+  h2{font-family:'Bebas Neue';font-weight:400;font-size:30px;letter-spacing:.02em;margin-bottom:12px;color:var(--gold)}
+  section{background:rgba(15,42,26,.7);border:1px solid var(--line);border-radius:16px;padding:22px;margin-bottom:20px}
+  .summary li{margin:6px 0 6px 18px}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+  .kpi{background:#081a10;border:1px solid var(--line);border-radius:12px;padding:16px}
+  .kpi .l{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+  .kpi .v{font-family:'Bebas Neue';font-size:36px;color:var(--ink)}
+  .kpi .n{font-size:12px;color:var(--muted)}
+  .grid2{display:grid;grid-template-columns:2fr 1fr;gap:20px}
+  .chartbox{position:relative;height:300px}
+  .note{margin-top:10px;font-size:13px;color:var(--muted)}
+  .tablewrap{overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:13px;min-width:720px}
+  th{background:#081a10;color:var(--gold);text-align:left;padding:9px 10px;font-weight:600;white-space:nowrap;position:sticky;top:0}
+  td{padding:9px 10px;border-top:1px solid rgba(255,255,255,.07);white-space:nowrap}
+  td.num{text-align:right;font-variant-numeric:tabular-nums}
+  tr:hover td{background:rgba(249,201,51,.05)}
+  .thumb{width:56px;height:56px;object-fit:cover;border-radius:8px;border:1px solid var(--line);display:block}
+  .thumb-ph{width:56px;height:56px;border-radius:8px;background:#081a10;display:grid;place-items:center;color:var(--muted);font-size:11px}
+  a{color:var(--gold)}
+  .pill{display:inline-block;padding:2px 9px;border-radius:99px;font-size:11px;font-weight:600}
+  .ok{background:rgba(123,227,143,.15);color:var(--green)} .bad{background:rgba(255,107,91,.15);color:var(--red)} .warn{background:rgba(255,200,87,.15);color:var(--amber)}
+  .wins{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .wincard{background:#081a10;border-radius:12px;padding:14px;border:1px solid var(--line)}
+  .wincard h3{font-size:15px;margin-bottom:8px}
+  .wincard li{font-size:13px;margin:4px 0 4px 16px}
+  .rule{margin-top:14px;padding:14px;border-radius:12px;background:rgba(249,201,51,.08);border:1px dashed rgba(249,201,51,.4)}
+  .plan{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .plan div{background:#081a10;border-radius:12px;padding:14px;border-top:3px solid var(--line)}
+  .plan .c{border-top-color:var(--red)} .plan .m{border-top-color:var(--amber)} .plan .p{border-top-color:var(--muted)}
+  .plan h3{font-size:14px;margin-bottom:8px} .plan li{font-size:13px;margin:5px 0 5px 16px}
+  .empty{color:var(--muted);font-style:italic}
+  footer{text-align:center;color:#8fa08b;font-size:12px;margin-top:30px}
+  @media(max-width:800px){.grid2,.wins,.plan{grid-template-columns:1fr}h1{font-size:40px}}
+  @media print{body{background:#fff;color:#111}section{break-inside:avoid;background:#fff;border-color:#ccc}h2,th{color:#7a5c00}.kpi,.wincard,.plan div{background:#f7f7f2}}
+
+  .plan4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.plan4 div{background:#081a10;border-radius:12px;padding:14px;border-top:3px solid var(--line)}.plan4 .e{border-top-color:var(--green)}.plan4 .o{border-top-color:var(--amber)}.plan4 .a{border-top-color:var(--red)}.plan4 .n{border-top-color:var(--muted)}.plan4 h3{font-size:14px;margin-bottom:8px}.plan4 li{font-size:13px;margin:5px 0 5px 16px}@media(max-width:800px){.plan4{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<main id="app"></main>
+<footer>Reporte generado con la skill Optimizador de Campañas · La Jungla de los Ads</footer>
+<script id="data">
+// ===== Claude: reemplaza SOLO este objeto con los datos reales =====
+const DATA = {
+  cuenta: "Cuenta de ejemplo", plataforma: "Meta Ads", periodo: "16–22 Nov 2026", fecha: "23-11-2026", moneda: "$",
+  rangoCPR: { min: 2, max: 4, tipo: "lead" },
+  resumen: ["Cómo va: ...", "Problema principal: ...", "Acción más importante: ..."],
+  plan: { presupuesto: 1000, cprProyectado: 2, resultadosProyectados: 500, resultadosReales: 380, gastoReal: 950, tipo: "leads" },
+  campanas: [ { nombre: "22-11-2026 Leads Formulario Producto ABO", resultados: 380, cpr: 2.5, gasto: 950, estado: "warn", decision: "No tocar a nivel campaña: decidir en conjuntos y anuncios" } ],
+  conjuntos: [ { nombre: "Seg. Abierto", campana: "22-11-2026 Leads Formulario Producto ABO", resultados: 200, cpr: 2.1, cpm: 4.2, frecuencia: 1.9, cpc: 0.3, ctrUnico: 1.8, impresiones: 230000, gasto: 420, estado: "ok", decision: "Escalar" } ],
+  anuncios: [ { thumb: "", preview: "", nombre: "Ads1 Video AV1 NC3 H1", resultados: 120, cpr: 1.9, ctrUnico: 2.2, hookRate: 27, frecuencia: 1.8, cpc: 0.28, convPlataforma: 24, gasto: 228, estado: "ok", decision: "Escalar" } ],
+  diagnostico: [ { elemento: "Ads3 Imagen AV2 NC1 H1", estado: "bad", causa: "CTR único 0.9% y hook rate bajo: el creativo no atrae.", accion: "Cambiar el hook (una variable)." } ],
+  decisiones: { escalar: ["..."], optimizar: ["..."], apagar: ["..."], noTocar: ["..."] },
+  pipeline: { etapas: [ { etapa: "No contesta", n: 120 }, { etapa: "Descalificado", n: 90 }, { etapa: "Interesado", n: 60 }, { etapa: "Compró", n: 8 } ], lectura: "..." },
+  avisoSinCRM: "Sin data del CRM no se puede saber qué campaña vende. Acción crítica: implementar UTMs y compartir el export reducido.",
+  proximaRevision: { fecha: "26-11-2026", mirar: "..." }
+};
+</script>
+<script>
+(function(){
+  const D = DATA, m = D.moneda||"$";
+  const fmt=(n,d=0)=>(n===null||n===undefined||n==="")?"—":Number(n).toLocaleString("es-PE",{minimumFractionDigits:d,maximumFractionDigits:d});
+  const money=(n,d=2)=>(n===null||n===undefined||n==="")?"—":m+fmt(n,d);
+  const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+  const li=a=>(a&&a.length)?a.map(x=>`<li>${esc(x)}</li>`).join(""):`<li class="empty">Ninguno</li>`;
+  const sem=e=>({ok:'<span class="pill ok">🟢</span>',warn:'<span class="pill warn">🟡</span>',bad:'<span class="pill bad">🔴</span>'}[e]||"");
+  const P=D.plan, pct=P.resultadosProyectados?Math.round(P.resultadosReales/P.resultadosProyectados*100):null;
+  let h=`<header><div class="eyebrow">Optimización de campañas · ${esc(D.plataforma)}</div><h1>${esc(D.cuenta)}</h1>
+  <div class="meta">Periodo: ${esc(D.periodo)} · Fecha: ${esc(D.fecha)} · Rango aceptable por ${esc(D.rangoCPR.tipo)}: ${money(D.rangoCPR.min)}–${money(D.rangoCPR.max)}</div></header>
+  <section><h2>Resumen</h2><ul class="summary">${li(D.resumen)}</ul></section>
+  <section><h2>Resultados vs. plan de medios</h2><div class="kpis">
+    <div class="kpi"><div class="l">Proyectado</div><div class="v">${fmt(P.resultadosProyectados)}</div><div class="n">${esc(P.tipo)} con ${money(P.presupuesto,0)} a ${money(P.cprProyectado)}</div></div>
+    <div class="kpi"><div class="l">Real</div><div class="v">${fmt(P.resultadosReales)}</div><div class="n">con ${money(P.gastoReal,0)} gastados</div></div>
+    <div class="kpi"><div class="l">Cumplimiento</div><div class="v">${pct===null?"—":pct+"%"}</div><div class="n">${pct!==null&&pct>=100?'<span class="pill ok">En meta</span>':'<span class="pill bad">Bajo la meta</span>'}</div></div>
+    <div class="kpi"><div class="l">Costo por resultado real</div><div class="v">${money(P.resultadosReales?P.gastoReal/P.resultadosReales:null)}</div></div>
+  </div></section>
+  <section><h2>Capa macro · Campañas</h2><div class="tablewrap"><table><tr><th></th><th>Campaña</th><th>Resultados</th><th>Costo por resultado</th><th>Gasto</th><th>Decisión</th></tr>
+  ${(D.campanas||[]).map(c=>`<tr><td>${sem(c.estado)}</td><td>${esc(c.nombre)}</td><td class="num">${fmt(c.resultados)}</td><td class="num">${money(c.cpr)}</td><td class="num">${money(c.gasto)}</td><td>${esc(c.decision)}</td></tr>`).join("")}
+  </table></div><p class="note">Regla: nunca se decide solo con esta capa. Las decisiones salen de conjuntos y anuncios.</p></section>
+  <section><h2>Capa intermedia · Conjuntos de anuncios</h2><div class="tablewrap"><table><tr><th></th><th>Conjunto</th><th>Campaña</th><th>Resultados</th><th>Costo por resultado</th><th>CPM</th><th>Frecuencia</th><th>CPC</th><th>CTR único</th><th>Impresiones</th><th>Gasto</th><th>Decisión</th></tr>
+  ${(D.conjuntos||[]).map(c=>`<tr><td>${sem(c.estado)}</td><td>${esc(c.nombre)}</td><td>${esc(c.campana)}</td><td class="num">${fmt(c.resultados)}</td><td class="num">${money(c.cpr)}</td><td class="num">${money(c.cpm)}</td><td class="num">${fmt(c.frecuencia,2)}</td><td class="num">${money(c.cpc)}</td><td class="num">${fmt(c.ctrUnico,2)}%</td><td class="num">${fmt(c.impresiones)}</td><td class="num">${money(c.gasto)}</td><td>${esc(c.decision)}</td></tr>`).join("")}
+  </table></div></section>
+  <section><h2>Capa micro · Anuncios</h2><div class="tablewrap"><table><tr><th></th><th>Anuncio</th><th></th><th>Resultados</th><th>Costo por resultado</th><th>CTR único</th><th>Hook rate</th><th>Frecuencia</th><th>CPC</th><th>Conv. plataforma</th><th>Gasto</th><th>Decisión</th></tr>
+  ${(D.anuncios||[]).map(a=>{const img=a.thumb?`<img class="thumb" src="${a.thumb}" alt="">`:`<div class="thumb-ph">sin imagen</div>`;const cell=a.preview?`<a href="${esc(a.preview)}" target="_blank" rel="noopener">${img}</a>`:img;
+  return `<tr><td>${sem(a.estado)}</td><td>${cell}</td><td>${esc(a.nombre)}</td><td class="num">${fmt(a.resultados)}</td><td class="num">${money(a.cpr)}</td><td class="num">${fmt(a.ctrUnico,2)}%</td><td class="num">${a.hookRate==null?"—":fmt(a.hookRate,0)+"%"}</td><td class="num">${fmt(a.frecuencia,2)}</td><td class="num">${money(a.cpc)}</td><td class="num">${a.convPlataforma==null?"—":fmt(a.convPlataforma,0)+"%"}</td><td class="num">${money(a.gasto)}</td><td>${esc(a.decision)}</td></tr>`}).join("")}
+  </table></div><p class="note">Referencias: CTR único ≥1.5% · hook rate ≥20% · frecuencia 1–5 (en frío) · conversión de formulario de Facebook ≥20%, web ≥30%, WhatsApp ≥30–40%.</p></section>
+  <section><h2>Diagnóstico</h2><div class="tablewrap"><table><tr><th></th><th>Elemento</th><th>Causa</th><th>Acción</th></tr>
+  ${(D.diagnostico||[]).map(d=>`<tr><td>${sem(d.estado)}</td><td>${esc(d.elemento)}</td><td style="white-space:normal">${esc(d.causa)}</td><td style="white-space:normal">${esc(d.accion)}</td></tr>`).join("")}
+  </table></div></section>
+  <section><h2>Decisiones</h2><div class="plan4">
+    <div class="e"><h3>🚀 Escalar</h3><ul>${li(D.decisiones.escalar)}</ul></div>
+    <div class="o"><h3>🔧 Optimizar</h3><ul>${li(D.decisiones.optimizar)}</ul></div>
+    <div class="a"><h3>⛔ Apagar</h3><ul>${li(D.decisiones.apagar)}</ul></div>
+    <div class="n"><h3>⏸️ No tocar</h3><ul>${li(D.decisiones.noTocar)}</ul></div>
+  </div><p class="note">Revisar a diario, intervenir cada 2–3 días. Una variable a la vez.</p></section>
+  <section><h2>Pipeline comercial</h2>${D.pipeline?`<div class="chartbox"><canvas id="cPipe"></canvas></div><p class="note">${esc(D.pipeline.lectura)}</p>`:`<p class="empty">${esc(D.avisoSinCRM)}</p>`}</section>
+  <section><h2>Próxima revisión</h2><p><b>${esc(D.proximaRevision.fecha)}</b> · ${esc(D.proximaRevision.mirar)}</p></section>`;
+  document.getElementById("app").innerHTML=h;
+  if(window.Chart&&D.pipeline){Chart.defaults.color="#b9c7b4";Chart.defaults.font.family="Poppins";const e=D.pipeline.etapas,t=e.reduce((s,x)=>s+x.n,0);
+    new Chart(document.getElementById("cPipe"),{type:"bar",data:{labels:e.map(x=>`${x.etapa} (${t?Math.round(x.n/t*100):0}%)`),datasets:[{data:e.map(x=>x.n),backgroundColor:["#ff6b5b","#ffc857","#5fb8ff","#7be38f"]}]},options:{indexAxis:"y",maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{color:"rgba(255,255,255,.06)"}},y:{grid:{display:false}}}}});}
+})();
+</script>
+</body>
+</html>
