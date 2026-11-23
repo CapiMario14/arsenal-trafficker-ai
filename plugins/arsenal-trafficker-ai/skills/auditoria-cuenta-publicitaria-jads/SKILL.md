@@ -1,111 +1,103 @@
 ---
 name: auditoria-cuenta-publicitaria-jads
-description: Auditoría inicial de una cuenta publicitaria (Meta, TikTok o Google Ads) que el trafficker hereda o recibe de un cliente nuevo, con la metodología de Capimario (La Jungla de los Ads). Revisa contexto y benchmark, tracking, estructura de campañas, rendimiento a lo largo del funnel y qué está funcionando, y entrega un diagnóstico con plan de acción. Úsala siempre que el usuario diga "audita esta cuenta", "revisa la cuenta que me pasó el cliente", "qué está mal en esta cuenta", "heredé una cuenta", "diagnóstico inicial", o pegue un export, capturas o datos de una cuenta que todavía no gestiona, aunque no diga "auditoría". NO es para la revisión semanal de campañas que el trafficker ya gestiona (eso es revision-de-campanas-jads) ni para armar el plan de medios (eso es estratega-digital-anuncios-jads).
+description: Auditoría de cuenta publicitaria de La Jungla de los Ads (metodología Capimario). Hace preguntas previas al trafficker, saca la data de los últimos 3 a 6 meses por MCP (Meta; TikTok y Google con sus diferencias), cruza la pauta con el pipeline comercial del CRM, ubica dónde se queda la plata y entrega un reporte HTML visual con resultados por mes, vista de campañas, conjuntos y anuncios, qué funciona y por qué, meta realista y plan de acción. Úsala siempre que el usuario diga "audita esta cuenta", "revisa la cuenta del cliente", "heredé una cuenta", "diagnóstico de la cuenta", "qué está mal en esta cuenta" o pida un reporte de auditoría, aunque no diga "auditoría". NO es para la revisión diaria o semanal de campañas activas (eso es revision-de-campanas-jads) ni para crear campañas (eso es creador-de-campanas-jads).
 ---
 
-# Auditoría de cuenta publicitaria
+# Auditoría de cuenta publicitaria — JADS
 
-Foto inicial de una cuenta que el trafficker todavía no gestiona. El objetivo no es listar todo lo que está mal: es encontrar **dónde está el cuello de botella real** y **qué ya funciona** para llevarlo a lo que no funciona.
+Foto completa de una cuenta publicitaria: qué se ha hecho, cuánto costó, qué funcionó y, sobre todo, **dónde se está quedando la plata**. Termina en un **reporte HTML** que el trafficker puede revisar y compartir con su cliente.
 
-Cada regla lleva dos etiquetas:
-- **[Universal]** = mecanismo que aplica a cualquier nicho. **[Vertical]** = cifra o variante de un vertical concreto; nunca la cruces con otro vertical.
-- **[Confirmado]** = validado en 3+ casos reales. **[Hipótesis]** = observado, pero aún sin evidencia suficiente: dilo explícitamente si lo usas.
+Etiquetas: **[Universal]** aplica a cualquier nicho · **[Vertical]** cifra de un vertical concreto, no se cruza con otro · **[Confirmado]** validado en 3+ casos · **[Hipótesis]** observado, aún sin evidencia suficiente: dilo si lo usas.
 
-## Principios (no negociables)
+## Principios
+1. **Nunca un indicador solo.** Un CTR o un CPL aislado no dice nada; se contrasta con lo que pasa después en el funnel y en el pipeline comercial.
+2. **La cuenta se audita contra sí misma**, no contra promedios del rubro.
+3. **El volumen solo no es buen indicador** en leads y mensajería. Algunos clientes se quedan tranquilos con volumen ("de 1,000 leads algo sale") y se respeta, pero el trafficker tiene que saber qué pasa con esos leads.
+4. **Todo termina en una acción replicable.**
 
-1. **Nunca evalúes un indicador solo [Universal, Confirmado].** Un CTR alto o bajo no dice nada por sí mismo. Contrástalo con lo que pasa después: leads, costo por lead, calidad del lead. Una campaña puede tener excelente entrada de tráfico y fallar en conversión; ese es el problema real, no el tráfico.
-2. **La cuenta se audita contra sí misma [Universal, Confirmado].** No hay umbrales universales de CTR o CPL. El benchmark es el histórico propio de la cuenta.
-3. **Busca el porqué cualitativo [Universal, Confirmado].** Si una campaña convierte mejor que otra, no lo reportes como dato aislado: pregunta qué es distinto ahí (ángulo, oferta, formato, segmento). Esa variable es el hallazgo.
-4. **Todo termina en una acción replicable [Universal, Confirmado].** Si algo funciona en una campaña, la acción es llevarlo a las débiles.
+## Paso 1 — Preguntas previas (siempre, antes de sacar data)
+Hazlas en un solo mensaje:
+1. **¿La cuenta ya viene haciendo campañas? ¿De forma continua o con pausas?**
+2. **¿Cuánto invirtió en los últimos 3 meses?** Si la inversión fue poca para el tamaño del negocio, **amplía el análisis a los últimos 6 meses** para tener más data. Qué es "poco" queda a criterio del trafficker (1,000 soles puede ser mucho para un negocio y poco para otro).
+3. **¿Cuál es el precio del producto o servicio?** Es el punto de partida para juzgar si el costo por resultado es sano. Si el trafficker no lo tiene, adviértele que sin ese dato el análisis pierde criterio y pídele que lo consiga.
+4. **¿El cliente tiene una meta?** (cantidad de leads, mensajes o ventas al mes).
+5. **¿El cliente prioriza volumen o calidad?**
+6. **¿Hay CRM o registro de lo que pasa con los leads?** Pide un **export reducido de los últimos 3 meses**: solo **fecha del lead, campaña o fuente y estado** (no contesta, descalificado, interesado, compró), **sin nombres, teléfonos ni correos**. Así el cliente comparte con menos recelo y no se suben datos personales.
+   - Si el cliente no comparte nada, la auditoría sigue, pero deja escrito que **sin esa data no se puede saber dónde se cae la venta** y que las conclusiones quedan limitadas.
 
-## Antes de empezar: qué necesitas
+## Paso 2 — Sacar la data por MCP
+- **Meta:** usa el MCP de Meta Ads (solo lectura). Saca la data del periodo (3 o 6 meses) a nivel de **campaña, conjunto y anuncio**, separada **por mes**.
+- **TikTok:** si hay un MCP de TikTok conectado, mismo criterio con sus nombres (campaña, grupo de anuncios, anuncio).
+- **Google:** el MCP oficial de Google Ads es de solo lectura y sirve para auditar. Los criterios específicos de Google están pendientes de definir; por ahora, aplica la misma lógica y avisa al trafficker que esta parte se va a ampliar.
+- **Si no hay MCP:** pide un export (CSV o Excel) con las mismas columnas o capturas, y avisa qué no se pudo verificar.
+- **Miniaturas:** descarga la imagen o miniatura de cada anuncio y **guárdala dentro del reporte** (embebida en base64) para que no caduque. El enlace de vista previa de la plataforma va como extra, porque puede dejar de funcionar con el tiempo.
 
-Pide lo que falte, en un solo mensaje y sin bloquear el trabajo:
-- **Datos de la cuenta:** acceso por el MCP de Meta Ads (u otra plataforma), un export (CSV/Excel) o capturas. Mínimo los últimos 30 días; ideal 90 días o más para tener histórico.
-- **Ficha del negocio** (ver `CONTRATO.md` del repo): vertical, ticket, ubicación del público, objetivo (cantidad o calidad), presupuesto, capacidad operativa.
-- **Qué pasa después del lead:** ¿cuántos leads responden, agendan, asisten o compran? Si el cliente no lo sabe, anótalo como **hueco crítico**: sin eso no se puede juzgar la calidad.
+### Métricas por nivel
+| Nivel | Métricas |
+|---|---|
+| **Campaña** | Nombre · objetivo · resultados (leads, mensajes o ventas) · costo por resultado · gasto |
+| **Conjunto de anuncios** | Nombre · campaña de la que sale · resultados · costo por resultado · CPM · frecuencia · CPC · CTR único · impresiones · gasto |
+| **Anuncio** | Miniatura (con vista previa) · nombre · resultados · costo por resultado · CTR único · CPC · impresiones. Si es video: reproducciones de 3 segundos y de 25%, 50%, 75% y 100% |
 
-Si solo tienes capturas o datos parciales, audita igual y marca con claridad qué conclusiones quedan abiertas.
+## Paso 3 — Análisis
+### 3.1 Inventario de objetivos
+Lista qué objetivos se han trabajado (leads con formulario nativo, leads con landing, WhatsApp, DM de Instagram, ventas de ecommerce, campañas de seguidores u otros), con el **gasto** y el **costo por resultado** de cada uno.
 
-## Proceso (en este orden)
+### 3.2 Salud del costo por resultado frente al ticket
+Compara el costo por resultado con el precio del producto. Ejemplo: un lead de $300 para un servicio de $1,000 se come el 30% del precio, y es solo un lead, no un cliente → hay que optimizar. **No hay un porcentaje fijo:** el trafficker decide con criterio según el margen del negocio. El costo por mensaje suele ser la **primera alerta** de qué tan sana está la cuenta.
 
-### Paso 1 — Contexto y benchmark
-1. **Arma el benchmark con el histórico propio [Universal, Confirmado]:** costo por resultado + volumen, según el objetivo:
-   - Lead gen → CPL + cantidad de leads
-   - Mensajería → costo por mensaje + cantidad de conversaciones
-   - Ventas → costo por compra + cantidad de compras
-2. **Si la cuenta es nueva o no tiene histórico útil [Universal, Confirmado]:** usa proyectos similares como referencia aproximada. Nunca prometas resultados en X días.
-3. **Ajusta el benchmark antes de diagnosticar [Universal, Confirmado].** Si el periodo que comparas no coincide en estas variables, ajusta el benchmark en lugar de declarar un fracaso:
-   - **País o ciudad:** en Perú, provincias suelen costar más que Lima; en LatAm, Colombia, México, Ecuador y Argentina tienen costos parecidos entre sí.
-   - **Temporada:** caro en Black Friday, Navidad y, en menor medida, julio; barato de enero a marzo.
-   - **Tipo de campaña:** formulario nativo, landing, mensajería o remarketing no se comparan entre sí.
-4. **Evaluación = "llegar o estar cerca" [Universal, Confirmado]** con criterio de contexto, no un número fijo.
+### 3.3 Comparación mes a mes
+- Inversión vs. cantidad de resultados, mes a mes.
+- **Variaciones de inversión:** si un mes se invirtió mucho menos que otro, o hubo pausas, señálalo como hallazgo; cambia cómo se leen los resultados y afecta el aprendizaje de la plataforma.
+- **Métricas de negocio:** tasa de conversión, costo de adquisición de cliente (CAC) y ROAS. La cuenta publicitaria muchas veces no las tiene (sobre todo en mensajería): pídelas al cliente o calcúlalas con el CRM. Si no existen, márcalo como hueco.
+- **Ajusta antes de juzgar [Universal, Confirmado]:** país o ciudad, temporada (caro en Black Friday, Navidad y julio; barato de enero a marzo) y tipo de campaña.
 
-Referencias de vertical (solo si no hay histórico, y solo en su vertical):
-- **Real estate, Perú [Vertical, Confirmado]:** formulario nativo en Lima Moderna, tope de CPL de $2–4; resto de Lima, $6–8 (varía con el ticket). Landing, ~15–20% más caro que el formulario nativo (patrón, no regla). Mensajería en tráfico frío, $1–3, condicionado al ticket. Remarketing por mensajería, S/10–15 de piso y hasta S/45 visto en casos reales.
-- El tope de CPL **solo se puede romper hacia arriba si la calidad del funnel lo sostiene** (responde → agenda → asiste) [Vertical, Confirmado].
+### 3.4 Pipeline comercial: dónde se queda la plata
+Con el export del CRM: de los leads o mensajes entregados, cuántos **no contestan**, cuántos están **descalificados**, cuántos **interesados** y cuántos **compraron**, en total y por campaña si se puede. Calcula el porcentaje de cada etapa y señala **dónde se detienen las oportunidades**:
+- Muchos "no contesta" → velocidad o forma de atención comercial, o leads de baja intención.
+- Muchos "descalificados" → el anuncio o el formulario no filtran (precio visible, preguntas filtro).
+- Muchos "interesados" y pocas compras → proceso de cierre u oferta.
 
-### Paso 2 — Tracking y estado de la cuenta
-Revisa lo básico antes de juzgar resultados; un problema aquí invalida todo lo demás:
-- ¿El pixel o dataset y los eventos de conversión están instalados y disparan en el lugar correcto (por ejemplo, el evento de registro en la página de gracias, no en la landing)? Si hay dudas serias, deriva al revisor de pixel y GTM.
-- ¿El objetivo de la campaña coincide con el objetivo comercial (leads vs. mensajes vs. ventas)?
-- **Interrupciones de pago [Universal, Hipótesis]:** fallos de la tarjeta o del método de pago pueden reiniciar la fase de aprendizaje y explicar picos de costo por resultado sin que haya un problema creativo. Revisa el historial de facturación antes de culpar a los anuncios.
-- **Campos del formulario [Universal, Hipótesis]:** agregar un campo con fricción (por ejemplo, documento de identidad) subió el CPL en un rango observado de 10–25% respecto al previo, con días puntuales mucho peores. El impacto fue menor en una cuenta con anuncios ya validados. Si el CPL saltó en una fecha concreta, revisa si cambió el formulario.
+### 3.5 Tracking
+Pixel o dataset y eventos bien puestos (por ejemplo, CompleteRegistration en la página de gracias, no en la landing), objetivo de campaña coherente con el objetivo del negocio. Si hay dudas serias, deriva al revisor de pixel cuando esté disponible.
+- **[Universal, Hipótesis]** Fallos del método de pago pueden reiniciar el aprendizaje y disparar el costo sin que sea un problema creativo.
+- **[Universal, Hipótesis]** Un campo con fricción nuevo en el formulario (por ejemplo, documento de identidad) subió el CPL un 10–25% en lo observado.
 
-### Paso 3 — Estructura de campañas
-Compara la estructura actual con el sistema de testeo de la metodología. Cada desvío es un hallazgo, no necesariamente un error: evalúalo contra los resultados.
-- **Fase de testeo con ABO, escalamiento con CBO [Universal, Confirmado].** En testeo, presupuesto manual y equitativo entre conjuntos (condiciones iguales). CBO solo cuando ya hay un ángulo ganador validado. **Si la cuenta testea con CBO**, Meta concentra el gasto en uno o dos conjuntos y el resto nunca recibe una prueba justa: los "perdedores" pueden no haberse testeado de verdad [Universal, Hipótesis].
-- **Un segmento = un ángulo [Universal, Confirmado]:** en fase cero, cada conjunto de anuncios trabaja un solo ángulo o territorio, con mínimo 3–5 anuncios por conjunto. Ángulos mezclados en el mismo conjunto impiden saber qué funcionó.
-- **Un anuncio = una objeción [Universal, Confirmado]:** cada anuncio ataca una sola objeción del mercado, sea imagen, carrusel o video.
-- **Distribución por nivel de consciencia en tráfico frío [Universal, Confirmado]:** de los anuncios de cada ángulo, la mayoría (~3 de 5) apunta a niveles altos (consciente del producto, muy consciente) y la minoría (~2 de 5) a niveles bajos (consciente del problema, inconsciente). Meta reimpacta a la misma persona, así que alternar niveles funciona como una secuencia narrativa.
-- **Remarketing separado y enfocado en cierre [Universal, Confirmado]:** públicos con intención real (visitas, carrito abandonado, leads sin respuesta, conversaciones sin cerrar) solo con anuncios de niveles de consciencia 4–5, con más volumen de anuncios (5 o más) y contenido de cierre: beneficios concretos, diferenciadores, promociones y valor monetario.
-- **Remarketing por "¿dónde está la plata?" [Universal, Confirmado]:** prioriza por señales de atención sostenida, poder adquisitivo e interés, no "todo el que alguna vez interactuó". En real estate, la señal es el CRM (leads medios o altos que agendaron visita y no asistieron; requiere ~1,000 personas como mínimo). En ecommerce, públicos de interacciones orgánicas masivas o eventos de intención.
-- **Precio en el anuncio [Vertical real estate, Confirmado]:** el precio (total, cuota mensual o inicial) es siempre el mejor filtro de calidad del lead. Si la cuenta tiene mala calidad y no muestra precio, es un hallazgo fuerte. No es un filtro perfecto: filtra volumen y mejora la calidad promedio.
+### 3.6 Estructura
+Compárala con el sistema de la metodología: testeo con ABO y escalado con CBO; mínimo 2–3 conjuntos al testear; un ángulo por conjunto con mínimo 3 anuncios; una objeción por anuncio; anuncios de distintos niveles de consciencia; remarketing aparte y enfocado en cierre. Cada desvío es un hallazgo, que se evalúa contra los resultados.
 
-### Paso 4 — Rendimiento a lo largo del funnel
-1. Ubica el cuello de botella en este recorrido: impresión → clic → lead, mensaje o compra → calificación → venta. No asumas que el problema está en la primera métrica que se ve mal.
-2. **Si el costo por resultado está por encima del benchmark ajustado, sigue el orden de diagnóstico [Universal, Confirmado]:**
-   - **a. Contexto:** ¿ya ajustaste por país, temporada y tipo de campaña (Paso 1)?
-   - **b. Frecuencia:** en tráfico frío y lead gen, una frecuencia cercana a 5 indica audiencia saturada o mensaje quemado; la acción es refrescar creativos o ampliar el público antes de tocar el ángulo. **En remarketing, la frecuencia alta es esperada por diseño** (público pequeño) y no es señal de saturación: pasa directo a revisar calidad del público, oferta y mensaje.
-   - **c. Solo si la frecuencia es normal en tráfico frío:** sospecha del ángulo, copy, oferta o público.
-3. **Remarketing caro no es fracaso [Universal, Confirmado]:** puede costar 5–15 veces más que el tráfico frío porque es público precalificado.
-4. **Cantidad vs. calidad [Universal, Confirmado]:** antes de interpretar un costo, confirma qué pidió el cliente. El mismo CPL se lee distinto según el objetivo.
-5. **El ángulo mueve el costo directamente [Universal, Confirmado]:** un CPL bajo a veces se explica por el ángulo de venta, no por la optimización del público. No asumas que un buen costo es pauta bien optimizada sin revisar el ángulo.
-6. **Señal de sobreintervención [Universal, Confirmado]:** si el historial de cambios muestra ediciones casi diarias, los conjuntos nunca salen de la fase de aprendizaje. La regla es revisar diario e intervenir cada 2–3 días.
+### 3.7 Funnel
+Ubica el cuello de botella: impresión → clic → lead, mensaje o compra → pipeline comercial → venta. Si el costo subió, sigue el orden de diagnóstico **[Universal, Confirmado]**: contexto → frecuencia (cerca de 5 en tráfico frío es saturación; en remarketing la frecuencia alta es normal) → recién después ángulo, copy u oferta.
 
-### Paso 5 — Qué está funcionando y por qué
-1. Ordena campañas, conjuntos y anuncios por costo por resultado **y** calidad posterior (no solo por costo).
-2. Toma los 2–3 mejores y los 2–3 peores y compáralos en: ángulo o territorio, objeción atacada, nivel de consciencia, formato, presencia de precio, segmento.
-3. Formula el hallazgo como regla accionable: "Si X, entonces Y". Por ejemplo: "Los anuncios que abren con el precio traen leads que agendan más; llevar el precio al inicio de los anuncios de los conjuntos débiles".
-4. **Si un ángulo funciona, la respuesta es escalarlo [Universal, Confirmado]:** más formatos del mismo ángulo, más presupuesto, mejor comunicación. Nunca cambiar de ángulo por presión de la competencia.
+### 3.8 Qué funciona y por qué
+Toma los **3 anuncios con mejor costo por resultado** y los **3 con peor**, y compáralos en ángulo, formato, precio visible, hook y nivel de consciencia. Cierra con la regla que se repite en los ganadores ("si X, entonces Y") y la acción para llevarla a los débiles.
 
-### Paso 6 — Chequeo de realidad del objetivo
-Si el cliente tiene una meta, revísala en dos ejes [Universal, Confirmado] y comunícalo antes de proponer estrategia:
-- **Matemático:** ¿cuántos resultados permite el presupuesto con el costo esperado?
-- **Operativo:** ¿el negocio puede atender ese volumen? (por ejemplo, 1,000 leads al mes exigen WhatsApp API y un equipo de respuesta).
+### 3.9 Meta realista (solo si el cliente tiene una meta)
+- **Presupuesto ÷ costo por resultado actual = resultados posibles**, frente a la meta del cliente → ✅ alcanza / ❌ no alcanza.
+- **Capacidad operativa:** indícale al trafficker que **le traslade al cliente la pregunta**: "¿tu equipo puede atender este volumen?".
+- Si algo no cuadra, se dice de frente antes de proponer estrategia.
 
-Si falla cualquiera de los dos, se dice de frente. No se construye una campaña para un número que el cliente no podrá sostener.
+## Paso 4 — Reporte HTML
+Genera el reporte con la plantilla `assets/plantilla-reporte.html`: copia la plantilla y **reemplaza solo el objeto `DATA`** con los datos reales (no toques el diseño ni el script), guarda el archivo (por ejemplo, `auditoria-[cuenta]-[DD-MM-AAAA].html`) y ábrelo en el navegador. Presentación limpia, con gráficos de barras, circulares y de tendencia. Secciones, en este orden:
 
-## Formato de salida
+1. **Resumen ejecutivo:** 5 líneas con el estado general, dónde se queda la plata, la mejor oportunidad, el riesgo principal y la primera acción.
+2. **Indicadores clave:** inversión total, resultados, costo por resultado promedio, costo por resultado frente al ticket.
+3. **Resultados por mes:** gráfico de inversión vs. resultados y tendencia del costo por resultado; nota sobre variaciones de inversión.
+4. **Inversión por objetivo:** gráfico circular.
+5. **Vista de campañas** (tabla).
+6. **Vista de conjuntos de anuncios** (tabla).
+7. **Vista de anuncios** (tabla con miniaturas y métricas de video).
+8. **Pipeline comercial:** embudo o barras por etapa (si hay CRM; si no, el aviso de limitación).
+9. **Tracking y estructura:** hallazgos.
+10. **Qué funciona y por qué.**
+11. **Meta realista** (si aplica).
+12. **Plan de acción:** separado en **Crítico** (corregir ya), **Mejora** (puede esperar) y **Preferencia** (no justifica cambiar lo que funciona).
+13. **Huecos de información y nivel de confianza** de cada conclusión.
 
-Entrega el informe con estas secciones, en lenguaje claro y sin relleno:
-
-1. **Resumen en 5 líneas:** estado general, cuello de botella principal, la mejor oportunidad, el riesgo más grave y la primera acción.
-2. **Contexto y benchmark:** el benchmark usado y los ajustes aplicados.
-3. **Tracking y estado:** qué está bien, qué está roto, qué no se pudo verificar.
-4. **Estructura:** desvíos frente al sistema de testeo y su impacto probable.
-5. **Funnel:** dónde se cae el resultado, con números.
-6. **Qué funciona y por qué:** las reglas "si X, entonces Y" encontradas.
-7. **Plan de acción** separado en:
-   - **Crítico** (corregir ya, afecta el resultado)
-   - **Mejora** (puede esperar)
-   - **Preferencia** (no justifica cambiar algo que funciona)
-8. **Huecos de información:** lo que falta para cerrar conclusiones.
-9. **Para la siguiente skill:** ficha del negocio, benchmark y diagnóstico en el formato de `CONTRATO.md`, listos para la estratega.
-
-Indica el nivel de confianza de cada conclusión (**Confirmado** o **Hipótesis**). Si los datos no alcanzan para sacar una conclusión confiable, dilo en lugar de inventarla.
+Además del reporte, deja en el chat un bloque **"Para la siguiente skill"** con la ficha del negocio, el benchmark y el diagnóstico, en el formato de `CONTRATO.md`.
 
 ## Lo que esta skill NO hace
-- No arma el plan de medios ni define los ángulos nuevos: eso es `estratega-digital-anuncios-jads`.
-- No hace la revisión semanal de campañas que ya gestionas: eso es `revision-de-campanas-jads`.
-- No reporta la competencia: eso es `el-rastreador-jads`.
+- No modifica la cuenta: solo lee.
+- No hace la revisión diaria o semanal de campañas activas: eso es `revision-de-campanas-jads`.
+- No crea campañas: eso es `creador-de-campanas-jads`.
+- No define la estrategia completa: eso es `estratega-digital-anuncios-jads`.

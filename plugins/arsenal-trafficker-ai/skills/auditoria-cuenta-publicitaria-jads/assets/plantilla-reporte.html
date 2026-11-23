@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Auditoría de cuenta · La Jungla de los Ads</title>
+<!--
+  PLANTILLA DEL REPORTE DE AUDITORÍA — instrucciones para Claude:
+  1. No toques el HTML, el CSS ni el script de render.
+  2. Reemplaza SOLO el objeto `DATA` (dentro de <script id="data">) con los datos reales de la cuenta.
+  3. Las miniaturas van embebidas en base64 ("data:image/jpeg;base64,...") para que no caduquen.
+     `preview` es el enlace de vista previa de la plataforma (extra; puede caducar). Deja "" si no hay.
+  4. Si una sección no aplica (por ejemplo, no hay CRM o no hay meta), pon su valor en null y se muestra el aviso.
+  5. Guarda como auditoria-[cuenta]-[DD-MM-AAAA].html y ábrelo en el navegador.
+-->
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  :root{--bg:#07140d;--bg2:#0c2416;--card:#0f2a1a;--line:rgba(249,201,51,.22);--gold:#f9c933;--ink:#f4f1e6;--muted:#b9c7b4;--green:#7be38f;--red:#ff6b5b;--amber:#ffc857}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Poppins',system-ui,sans-serif;color:var(--ink);background:linear-gradient(180deg,#04060d 0%,var(--bg) 20%,var(--bg2) 100%);min-height:100vh;line-height:1.55}
+  main{max-width:1180px;margin:0 auto;padding:40px 20px 60px}
+  header{border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:26px}
+  .eyebrow{color:var(--gold);font-size:12px;letter-spacing:.2em;font-weight:600;text-transform:uppercase}
+  h1{font-family:'Bebas Neue';font-weight:400;font-size:52px;line-height:1;margin:6px 0}
+  .meta{color:var(--muted);font-size:14px}
+  h2{font-family:'Bebas Neue';font-weight:400;font-size:30px;letter-spacing:.02em;margin-bottom:12px;color:var(--gold)}
+  section{background:rgba(15,42,26,.7);border:1px solid var(--line);border-radius:16px;padding:22px;margin-bottom:20px}
+  .summary li{margin:6px 0 6px 18px}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+  .kpi{background:#081a10;border:1px solid var(--line);border-radius:12px;padding:16px}
+  .kpi .l{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+  .kpi .v{font-family:'Bebas Neue';font-size:36px;color:var(--ink)}
+  .kpi .n{font-size:12px;color:var(--muted)}
+  .grid2{display:grid;grid-template-columns:2fr 1fr;gap:20px}
+  .chartbox{position:relative;height:300px}
+  .note{margin-top:10px;font-size:13px;color:var(--muted)}
+  .tablewrap{overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:13px;min-width:720px}
+  th{background:#081a10;color:var(--gold);text-align:left;padding:9px 10px;font-weight:600;white-space:nowrap;position:sticky;top:0}
+  td{padding:9px 10px;border-top:1px solid rgba(255,255,255,.07);white-space:nowrap}
+  td.num{text-align:right;font-variant-numeric:tabular-nums}
+  tr:hover td{background:rgba(249,201,51,.05)}
+  .thumb{width:56px;height:56px;object-fit:cover;border-radius:8px;border:1px solid var(--line);display:block}
+  .thumb-ph{width:56px;height:56px;border-radius:8px;background:#081a10;display:grid;place-items:center;color:var(--muted);font-size:11px}
+  a{color:var(--gold)}
+  .pill{display:inline-block;padding:2px 9px;border-radius:99px;font-size:11px;font-weight:600}
+  .ok{background:rgba(123,227,143,.15);color:var(--green)} .bad{background:rgba(255,107,91,.15);color:var(--red)} .warn{background:rgba(255,200,87,.15);color:var(--amber)}
+  .wins{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .wincard{background:#081a10;border-radius:12px;padding:14px;border:1px solid var(--line)}
+  .wincard h3{font-size:15px;margin-bottom:8px}
+  .wincard li{font-size:13px;margin:4px 0 4px 16px}
+  .rule{margin-top:14px;padding:14px;border-radius:12px;background:rgba(249,201,51,.08);border:1px dashed rgba(249,201,51,.4)}
+  .plan{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .plan div{background:#081a10;border-radius:12px;padding:14px;border-top:3px solid var(--line)}
+  .plan .c{border-top-color:var(--red)} .plan .m{border-top-color:var(--amber)} .plan .p{border-top-color:var(--muted)}
+  .plan h3{font-size:14px;margin-bottom:8px} .plan li{font-size:13px;margin:5px 0 5px 16px}
+  .empty{color:var(--muted);font-style:italic}
+  footer{text-align:center;color:#8fa08b;font-size:12px;margin-top:30px}
+  @media(max-width:800px){.grid2,.wins,.plan{grid-template-columns:1fr}h1{font-size:40px}}
+  @media print{body{background:#fff;color:#111}section{break-inside:avoid;background:#fff;border-color:#ccc}h2,th{color:#7a5c00}.kpi,.wincard,.plan div{background:#f7f7f2}}
+</style>
+</head>
+<body>
+<main id="app"></main>
+<footer>Reporte generado con la skill Auditoría de Cuenta · La Jungla de los Ads</footer>
+
+<script id="data">
+// ===== Claude: reemplaza SOLO este objeto con los datos reales =====
+const DATA = {
+  cuenta: "Cuenta de ejemplo",
+  plataforma: "Meta Ads",
+  periodo: "Ago – Oct 2026 (3 meses)",
+  fecha: "23-11-2026",
+  moneda: "$",
+  ticket: 1000,
+  resumen: [
+    "Estado general: ...",
+    "Dónde se queda la plata: ...",
+    "Mejor oportunidad: ...",
+    "Riesgo principal: ...",
+    "Primera acción: ..."
+  ],
+  kpis: { inversion: 3000, resultados: 600, cpr: 5, tipoResultado: "leads" },
+  meses: [
+    { mes: "Ago", inversion: 1200, resultados: 260 },
+    { mes: "Sep", inversion: 700,  resultados: 120 },
+    { mes: "Oct", inversion: 1100, resultados: 220 }
+  ],
+  notaMeses: "En septiembre la inversión bajó ~40%: ...",
+  objetivos: [ { objetivo: "Leads formulario", gasto: 2000 }, { objetivo: "WhatsApp", gasto: 1000 } ],
+  campanas: [
+    { nombre: "22-08-2026 Leads Formulario Producto ABO", objetivo: "Leads", resultados: 400, cpr: 5, gasto: 2000 }
+  ],
+  conjuntos: [
+    { nombre: "Seg. Abierto", campana: "22-08-2026 Leads Formulario Producto ABO", resultados: 200, cpr: 5, cpm: 4.2, frecuencia: 1.8, cpc: 0.35, ctrUnico: 1.9, impresiones: 238000, gasto: 1000 }
+  ],
+  anuncios: [
+    { thumb: "", preview: "", nombre: "Ads1 Video AV1 NC3 H1", resultados: 120, cpr: 4.1, ctrUnico: 2.1, cpc: 0.31, impresiones: 120000,
+      video: { r3s: 40000, p25: 18000, p50: 9000, p75: 5000, p100: 2500 } }
+  ],
+  pipeline: { // null si no hay CRM
+    etapas: [ { etapa: "No contesta", n: 250 }, { etapa: "Descalificado", n: 180 }, { etapa: "Interesado", n: 140 }, { etapa: "Compró", n: 30 } ],
+    lectura: "La mayor fuga está en 'No contesta' (42%): ..."
+  },
+  avisoSinCRM: "El cliente no compartió data del CRM: no se puede saber dónde se cae la venta y las conclusiones quedan limitadas.",
+  tracking: [ { estado: "ok", texto: "Pixel con CompleteRegistration en la página de gracias." } ],
+  estructura: [ { estado: "warn", texto: "Se testea con CBO: ..." } ],
+  queFunciona: {
+    mejores: ["Ads1 · Video · CPL $4.1 · precio visible · hook de cuota"],
+    peores: ["Ads5 · Imagen · CPL $11 · sin precio · hook de ubicación"],
+    regla: "Si el anuncio muestra la cuota mensual en los primeros segundos, entonces el CPL baja: replicar en los anuncios débiles."
+  },
+  metaRealista: { // null si el cliente no tiene meta
+    presupuesto: 1000, cprActual: 5, meta: 500, tipo: "leads",
+    capacidad: "Pregunta trasladada al cliente: ¿tu equipo puede atender este volumen?"
+  },
+  plan: {
+    critico: ["..."],
+    mejora: ["..."],
+    preferencia: ["..."]
+  },
+  huecos: ["No hay ROAS ni CAC: el cliente no registra ventas por campaña."]
+};
+</script>
+
+<script>
+(function(){
+  const D = DATA, m = D.moneda || "$";
+  const fmt = (n, d=0) => (n===null||n===undefined||n==="") ? "—" : Number(n).toLocaleString("es-PE",{minimumFractionDigits:d,maximumFractionDigits:d});
+  const money = (n, d=2) => (n===null||n===undefined||n==="") ? "—" : m + fmt(n,d);
+  const esc = s => String(s??"").replace(/[&<>"]/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+  const li = arr => (arr&&arr.length) ? arr.map(x=>`<li>${esc(x)}</li>`).join("") : `<li class="empty">Sin elementos</li>`;
+  const pill = e => ({ok:'<span class="pill ok">OK</span>',warn:'<span class="pill warn">Atención</span>',bad:'<span class="pill bad">Crítico</span>'}[e]||"");
+  const pctTicket = (D.ticket && D.kpis.cpr) ? (D.kpis.cpr/D.ticket*100) : null;
+
+  let h = `
+  <header>
+    <div class="eyebrow">Auditoría de cuenta · ${esc(D.plataforma)}</div>
+    <h1>${esc(D.cuenta)}</h1>
+    <div class="meta">Periodo: ${esc(D.periodo)} · Fecha: ${esc(D.fecha)}${D.ticket?` · Ticket: ${money(D.ticket,0)}`:""}</div>
+  </header>
+
+  <section><h2>Resumen ejecutivo</h2><ul class="summary">${li(D.resumen)}</ul></section>
+
+  <section><h2>Indicadores clave</h2><div class="kpis">
+    <div class="kpi"><div class="l">Inversión</div><div class="v">${money(D.kpis.inversion,0)}</div></div>
+    <div class="kpi"><div class="l">Resultados</div><div class="v">${fmt(D.kpis.resultados)}</div><div class="n">${esc(D.kpis.tipoResultado)}</div></div>
+    <div class="kpi"><div class="l">Costo por resultado</div><div class="v">${money(D.kpis.cpr)}</div></div>
+    <div class="kpi"><div class="l">Costo por resultado vs. ticket</div><div class="v">${pctTicket===null?"—":fmt(pctTicket,1)+"%"}</div><div class="n">${pctTicket===null?"Falta el precio del producto":"del precio del producto"}</div></div>
+  </div></section>
+
+  <div class="grid2">
+    <section><h2>Resultados por mes</h2><div class="chartbox"><canvas id="cMeses"></canvas></div>${D.notaMeses?`<p class="note">${esc(D.notaMeses)}</p>`:""}</section>
+    <section><h2>Inversión por objetivo</h2><div class="chartbox"><canvas id="cObj"></canvas></div></section>
+  </div>
+
+  <section><h2>Vista de campañas</h2><div class="tablewrap"><table>
+    <tr><th>Campaña</th><th>Objetivo</th><th>Resultados</th><th>Costo por resultado</th><th>Gasto</th></tr>
+    ${(D.campanas||[]).map(c=>`<tr><td>${esc(c.nombre)}</td><td>${esc(c.objetivo)}</td><td class="num">${fmt(c.resultados)}</td><td class="num">${money(c.cpr)}</td><td class="num">${money(c.gasto)}</td></tr>`).join("")}
+  </table></div></section>
+
+  <section><h2>Vista de conjuntos de anuncios</h2><div class="tablewrap"><table>
+    <tr><th>Conjunto</th><th>Campaña</th><th>Resultados</th><th>Costo por resultado</th><th>CPM</th><th>Frecuencia</th><th>CPC</th><th>CTR único</th><th>Impresiones</th><th>Gasto</th></tr>
+    ${(D.conjuntos||[]).map(c=>`<tr><td>${esc(c.nombre)}</td><td>${esc(c.campana)}</td><td class="num">${fmt(c.resultados)}</td><td class="num">${money(c.cpr)}</td><td class="num">${money(c.cpm)}</td><td class="num">${fmt(c.frecuencia,2)}</td><td class="num">${money(c.cpc)}</td><td class="num">${fmt(c.ctrUnico,2)}%</td><td class="num">${fmt(c.impresiones)}</td><td class="num">${money(c.gasto)}</td></tr>`).join("")}
+  </table></div></section>
+
+  <section><h2>Vista de anuncios</h2><div class="tablewrap"><table>
+    <tr><th>Anuncio</th><th></th><th>Resultados</th><th>Costo por resultado</th><th>CTR único</th><th>CPC</th><th>Impresiones</th><th>Rep. 3 s</th><th>25%</th><th>50%</th><th>75%</th><th>100%</th></tr>
+    ${(D.anuncios||[]).map(a=>{
+      const img = a.thumb ? `<img class="thumb" src="${a.thumb}" alt="">` : `<div class="thumb-ph">sin imagen</div>`;
+      const cell = a.preview ? `<a href="${esc(a.preview)}" target="_blank" rel="noopener" title="Vista previa">${img}</a>` : img;
+      const v = a.video||{};
+      return `<tr><td>${cell}</td><td>${esc(a.nombre)}</td><td class="num">${fmt(a.resultados)}</td><td class="num">${money(a.cpr)}</td><td class="num">${fmt(a.ctrUnico,2)}%</td><td class="num">${money(a.cpc)}</td><td class="num">${fmt(a.impresiones)}</td><td class="num">${fmt(v.r3s)}</td><td class="num">${fmt(v.p25)}</td><td class="num">${fmt(v.p50)}</td><td class="num">${fmt(v.p75)}</td><td class="num">${fmt(v.p100)}</td></tr>`;
+    }).join("")}
+  </table></div><p class="note">La miniatura abre la vista previa del anuncio (el enlace de la plataforma puede caducar con el tiempo).</p></section>
+
+  <section><h2>Pipeline comercial: dónde se queda la plata</h2>
+    ${D.pipeline ? `<div class="chartbox"><canvas id="cPipe"></canvas></div><p class="note">${esc(D.pipeline.lectura)}</p>` : `<p class="empty">${esc(D.avisoSinCRM)}</p>`}
+  </section>
+
+  <div class="grid2" style="grid-template-columns:1fr 1fr">
+    <section><h2>Tracking</h2><ul class="summary">${(D.tracking||[]).map(t=>`<li>${pill(t.estado)} ${esc(t.texto)}</li>`).join("")||'<li class="empty">Sin hallazgos</li>'}</ul></section>
+    <section><h2>Estructura</h2><ul class="summary">${(D.estructura||[]).map(t=>`<li>${pill(t.estado)} ${esc(t.texto)}</li>`).join("")||'<li class="empty">Sin hallazgos</li>'}</ul></section>
+  </div>
+
+  <section><h2>Qué funciona y por qué</h2><div class="wins">
+    <div class="wincard"><h3>🟢 Los 3 mejores</h3><ul>${li(D.queFunciona.mejores)}</ul></div>
+    <div class="wincard"><h3>🔴 Los 3 peores</h3><ul>${li(D.queFunciona.peores)}</ul></div>
+  </div><div class="rule"><b>Regla para replicar:</b> ${esc(D.queFunciona.regla)}</div></section>`;
+
+  if (D.metaRealista){
+    const r = D.metaRealista, pos = r.cprActual ? Math.floor(r.presupuesto/r.cprActual) : null, ok = pos!==null && pos>=r.meta;
+    h += `<section><h2>Meta realista</h2><div class="kpis">
+      <div class="kpi"><div class="l">Presupuesto</div><div class="v">${money(r.presupuesto,0)}</div></div>
+      <div class="kpi"><div class="l">Costo por resultado actual</div><div class="v">${money(r.cprActual)}</div></div>
+      <div class="kpi"><div class="l">${esc(r.tipo)} posibles</div><div class="v">${fmt(pos)}</div></div>
+      <div class="kpi"><div class="l">Meta del cliente</div><div class="v">${fmt(r.meta)}</div><div class="n">${ok?'<span class="pill ok">Alcanza</span>':'<span class="pill bad">No alcanza</span>'}</div></div>
+    </div><p class="note"><b>Capacidad operativa:</b> ${esc(r.capacidad)}</p></section>`;
+  }
+
+  h += `<section><h2>Plan de acción</h2><div class="plan">
+    <div class="c"><h3>🔴 Crítico (corregir ya)</h3><ul>${li(D.plan.critico)}</ul></div>
+    <div class="m"><h3>🟡 Mejora (puede esperar)</h3><ul>${li(D.plan.mejora)}</ul></div>
+    <div class="p"><h3>⚪ Preferencia</h3><ul>${li(D.plan.preferencia)}</ul></div>
+  </div></section>
+
+  <section><h2>Huecos de información</h2><ul class="summary">${li(D.huecos)}</ul></section>`;
+
+  document.getElementById("app").innerHTML = h;
+
+  if (window.Chart){
+    Chart.defaults.color = "#b9c7b4"; Chart.defaults.font.family = "Poppins";
+    const grid = {color:"rgba(255,255,255,.06)"};
+    const ms = D.meses||[];
+    new Chart(document.getElementById("cMeses"), {
+      data:{ labels: ms.map(x=>x.mes), datasets:[
+        {type:"bar", label:"Inversión", data: ms.map(x=>x.inversion), backgroundColor:"rgba(249,201,51,.75)", yAxisID:"y"},
+        {type:"bar", label:"Resultados", data: ms.map(x=>x.resultados), backgroundColor:"rgba(123,227,143,.75)", yAxisID:"y1"},
+        {type:"line", label:"Costo por resultado", data: ms.map(x=>x.resultados? +(x.inversion/x.resultados).toFixed(2):null), borderColor:"#ff6b5b", backgroundColor:"#ff6b5b", tension:.3, yAxisID:"y2"}
+      ]},
+      options:{ maintainAspectRatio:false, interaction:{mode:"index",intersect:false},
+        scales:{ y:{position:"left",grid,title:{display:true,text:"Inversión"}}, y1:{position:"right",grid:{display:false},title:{display:true,text:"Resultados"}}, y2:{display:false}, x:{grid} } }
+    });
+    new Chart(document.getElementById("cObj"), {
+      type:"doughnut",
+      data:{ labels:(D.objetivos||[]).map(o=>o.objetivo), datasets:[{ data:(D.objetivos||[]).map(o=>o.gasto), backgroundColor:["#f9c933","#7be38f","#5fb8ff","#d38bff","#ff6b5b","#ffc857"], borderColor:"#0f2a1a" }]},
+      options:{ maintainAspectRatio:false, plugins:{legend:{position:"bottom"}} }
+    });
+    if (D.pipeline){
+      const e = D.pipeline.etapas, tot = e.reduce((s,x)=>s+x.n,0);
+      new Chart(document.getElementById("cPipe"), {
+        type:"bar",
+        data:{ labels:e.map(x=>`${x.etapa} (${tot?Math.round(x.n/tot*100):0}%)`), datasets:[{ label:"Leads", data:e.map(x=>x.n), backgroundColor:["#ff6b5b","#ffc857","#5fb8ff","#7be38f"] }]},
+        options:{ indexAxis:"y", maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{x:{grid},y:{grid:{display:false}}} }
+      });
+    }
+  }
+})();
+</script>
+</body>
+</html>
