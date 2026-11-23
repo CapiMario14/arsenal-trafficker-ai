@@ -1,5 +1,5 @@
 ---
-name: landing-ghl-con-claude
+name: landing-ghl-con-claude-jads
 description: Flujo completo para construir, publicar y verificar una landing page (registro a masterclass, captación de leads) en GoHighLevel usando Claude + Claude in Chrome. Cubre estructura y copy de la landing, código en 3 bloques (CSS / HTML / script), formulario GHL, página de gracias, política de privacidad, imágenes, favicon animado, título de pestaña, rendimiento y verificación en vivo. Úsalo siempre que el usuario hable de una landing en GHL, GoHighLevel, embudos/funnels, "página de registro", "página de gracias", formulario de GHL, "código personalizado" o "HTML/Javascript" del builder, publicar una página en su dominio, o de una landing que carga lenta o no deja hacer scroll — aunque no mencione la palabra "skill" ni "landing".
 ---
 

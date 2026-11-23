@@ -1,6 +1,6 @@
 ---
-name: revision-de-campanas
-description: Revisión periódica (diaria o semanal) de campañas activas que el trafficker ya gestiona en Meta, TikTok o Google Ads, con la metodología de Capimario (La Jungla de los Ads). Lee el rendimiento contra el benchmark de la propia cuenta, ubica el cuello de botella en el funnel, aplica el orden de diagnóstico cuando sube el costo y decide qué sostener, escalar, refrescar o apagar, respetando la cadencia de intervención. Úsala siempre que el usuario diga "revisa mis campañas", "cómo van las campañas esta semana", "subió el CPL", "¿apago esta campaña?", "¿escalo?", "análisis de métricas", "lee este reporte", o pegue métricas de campañas que ya maneja, aunque no diga "revisión". NO es para la foto inicial de una cuenta heredada (eso es auditoria-cuenta-publicitaria) ni para armar un plan de medios nuevo (eso es estratega-digital-anuncios).
+name: revision-de-campanas-jads
+description: Revisión periódica (diaria o semanal) de campañas activas que el trafficker ya gestiona en Meta, TikTok o Google Ads, con la metodología de Capimario (La Jungla de los Ads). Lee el rendimiento contra el benchmark de la propia cuenta, ubica el cuello de botella en el funnel, aplica el orden de diagnóstico cuando sube el costo y decide qué sostener, escalar, refrescar o apagar, respetando la cadencia de intervención. Úsala siempre que el usuario diga "revisa mis campañas", "cómo van las campañas esta semana", "subió el CPL", "¿apago esta campaña?", "¿escalo?", "análisis de métricas", "lee este reporte", o pegue métricas de campañas que ya maneja, aunque no diga "revisión". NO es para la foto inicial de una cuenta heredada (eso es auditoria-cuenta-publicitaria-jads) ni para armar un plan de medios nuevo (eso es estratega-digital-anuncios-jads).
 ---
 
 # Revisión de campañas
@@ -94,6 +94,6 @@ Reglas de la decisión:
 Separa siempre lo **crítico** (corregir ya) de las **mejoras** (pueden esperar) y de las **preferencias** (no justifican tocar algo que funciona). Si los datos no alcanzan para una conclusión confiable, dilo.
 
 ## Lo que esta skill NO hace
-- No hace la foto inicial de una cuenta heredada: eso es `auditoria-cuenta-publicitaria`.
-- No define estrategia ni segmentos nuevos desde cero: eso es `estratega-digital-anuncios`.
+- No hace la foto inicial de una cuenta heredada: eso es `auditoria-cuenta-publicitaria-jads`.
+- No define estrategia ni segmentos nuevos desde cero: eso es `estratega-digital-anuncios-jads`.
 - No escribe los anuncios nuevos: eso es Changuito.

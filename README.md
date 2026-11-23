@@ -27,19 +27,19 @@ Listo. Cuando publiquemos skills nuevas o mejoras, se actualizan desde aquí.
 | Fase | Skill | Para qué sirve | Estado |
 |---|---|---|---|
 | 1. Diagnóstico | Auditoría de negocio | Leer el negocio antes de pautar | Próximamente |
-| | `auditoria-cuenta-publicitaria` | Foto inicial de una cuenta que heredas | ✅ |
-| 2. Investigación | `el-rastreador` | Investigación de mercado y competencia (CIF) | ✅ |
+| | `auditoria-cuenta-publicitaria-jads` | Foto inicial de una cuenta que heredas | ✅ |
+| 2. Investigación | `el-rastreador-jads` | Investigación de mercado y competencia (CIF) | ✅ |
 | | Buscador de keywords | Keywords para Google Ads | Próximamente |
-| 3. Estrategia | `estratega-digital-anuncios` | Onboarding, criterio de éxito, plan de medios, buyer persona y objeciones | ✅ |
+| 3. Estrategia | `estratega-digital-anuncios-jads` | Onboarding, criterio de éxito, plan de medios, buyer persona y objeciones | ✅ |
 | 4. Producción | Changuito | Guiones y copies de anuncios por ángulo de venta | Próximamente |
 | | Producción de anuncios | Dirección y generación de creativos | Próximamente |
 | | Copywriter | Mails y textos de landing | Próximamente |
-| | `landing-ghl-con-claude` | Construir y publicar landings en GoHighLevel | ✅ |
+| | `landing-ghl-con-claude-jads` | Construir y publicar landings en GoHighLevel | ✅ |
 | 5. Implementación | Revisor de pixel y GTM | Revisar pixel, eventos y Tag Manager (Meta y Google) | Próximamente |
-| | Implementador de campañas | Subir la estructura de campañas | Próximamente |
-| 6. Optimización | `revision-de-campanas` | Diagnóstico periódico de rendimiento y decisiones | ✅ |
-| Complementarias | `domador-de-objeciones` | Responder objeciones y armar propuestas para cerrar clientes | ✅ |
-| | `ghostwriting-linkedin` | Posts de LinkedIn de marca personal por fase de funnel | ✅ |
+| | `creador-de-campanas-jads` | Objetivo, estructura (testeo ABO / escalado CBO), segmentación y montaje de la campaña en Meta por MCP, en pausa | ✅ |
+| 6. Optimización | `revision-de-campanas-jads` | Diagnóstico periódico de rendimiento y decisiones | ✅ |
+| Complementarias | `domador-de-objeciones-jads` | Responder objeciones y armar propuestas para cerrar clientes | ✅ |
+| | `ghostwriting-linkedin-jads` | Posts de LinkedIn de marca personal por fase de funnel | ✅ |
 
 ## Cómo se conectan las skills
 
@@ -50,6 +50,7 @@ Cada skill entrega un bloque "Para la siguiente skill" con un formato común. El
 Algunas skills necesitan conexiones para funcionar al 100%:
 - **El Rastreador:** Apify (bibliotecas de anuncios) + Supadata (transcripción de videos).
 - **Landing GHL:** Claude in Chrome.
+- **Creador de Campañas:** MCP oficial de Meta Ads (obligatorio).
 - **Auditoría y revisión de campañas:** el MCP de Meta Ads (opcional: también funcionan con exports o capturas).
 
 ## Soporte

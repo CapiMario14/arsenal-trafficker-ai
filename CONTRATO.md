@@ -8,7 +8,7 @@ Este documento fija qué recibe y qué entrega cada skill del arsenal, para que 
 DIAGNÓSTICO                      ESTRATEGIA                         EJECUCIÓN
 Auditoría de negocio ─┐
 Auditoría de cuenta  ─┼─► Estratega Digital de Anuncios ─► Changuito / Copywriter / Landing
-El Rastreador (CIF)  ─┘          ▲                          Revisor de pixel ─► Implementador
+El Rastreador (CIF)  ─┘          ▲                          Revisor de pixel ─► Creador de Campañas
 Buscador de keywords ────────────┘                                   │
                                   Revisión de campañas ◄─────────────┘ (ciclo semanal)
 ```
@@ -51,16 +51,16 @@ Cada skill entrega su resultado con un bloque final llamado **"Para la siguiente
 | Skill | Recibe | Entrega | No hace |
 |---|---|---|---|
 | Auditoría de negocio | Datos del cliente | Ficha del negocio | No toca la cuenta publicitaria |
-| `auditoria-cuenta-publicitaria` | Acceso o export de una cuenta que heredas | Foto inicial: estructura, tracking, benchmark, diagnóstico | No arma el plan de medios |
-| `el-rastreador` | Ficha del negocio + competidores | Hallazgos de mercado | No evalúa anuncios propios |
+| `auditoria-cuenta-publicitaria-jads` | Acceso o export de una cuenta que heredas | Foto inicial: estructura, tracking, benchmark, diagnóstico | No arma el plan de medios |
+| `el-rastreador-jads` | Ficha del negocio + competidores | Hallazgos de mercado | No evalúa anuncios propios |
 | Buscador de keywords | Ficha del negocio | Keywords agrupadas para Google | No arma campañas |
-| `estratega-digital-anuncios` | Ficha + benchmark + hallazgos | Plan de medios, segmentos, ángulos, objeciones por anuncio | No escribe los guiones |
+| `estratega-digital-anuncios-jads` | Ficha + benchmark + hallazgos | Plan de medios, segmentos, ángulos, objeciones por anuncio | No escribe los guiones |
 | Changuito | Ángulo + objeción + nivel de consciencia + etapa | Guiones y copies (hooks, cuerpo, CTA) | No define la estrategia |
 | Copywriter | Plan + ficha | Mails y textos de landing | No hace anuncios |
-| `landing-ghl-con-claude` | Copy de la landing | Landing publicada en GHL | No escribe el copy desde cero |
+| `landing-ghl-con-claude-jads` | Copy de la landing | Landing publicada en GHL | No escribe el copy desde cero |
 | Revisor de pixel y GTM | URL + plataformas | Estado del tracking y correcciones | No crea campañas |
-| Implementador | Plan + creativos + tracking OK | Campañas montadas | No decide el ángulo |
-| `revision-de-campanas` | Datos de campañas activas + benchmark | Diagnóstico + plan de acción semanal | No hace la foto inicial de una cuenta heredada |
+| `creador-de-campanas-jads` | Objetivo + estructura + segmentaciones + creativos del trafficker | Campaña montada en Meta, en pausa | No activa campañas ni inventa copies |
+| `revision-de-campanas-jads` | Datos de campañas activas + benchmark | Diagnóstico + plan de acción semanal | No hace la foto inicial de una cuenta heredada |
 
 ## Reglas que todas las skills respetan
 1. **Nunca un indicador solo.** Un CTR o un CPL aislado no dice nada; se contrasta con lo que pasa después en el funnel.

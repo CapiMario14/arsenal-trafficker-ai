@@ -1,5 +1,5 @@
 ---
-name: ghostwriting-linkedin
+name: ghostwriting-linkedin-jads
 description: Genera estructuras, hooks, cierres (CTA + pregunta) y sugerencias de formato/imagen para posts de LinkedIn de marca personal, mapeados a fase de funnel (TOFU/MOFU/BOFU). Usar SIEMPRE que Mario pida ayuda para escribir, planear o mejorar un post de LinkedIn, elegir un hook, decidir si poner un CTA externo, o diagnosticar por qué un post de LinkedIn no funcionó — incluso si no menciona la palabra "skill" o "estructura" explícitamente. Basado en el historial real de @Mario Díaz en LinkedIn (81 posts analizados con impresiones/reacciones/comentarios reales), no en mejores prácticas genéricas de LinkedIn.
 ---
 

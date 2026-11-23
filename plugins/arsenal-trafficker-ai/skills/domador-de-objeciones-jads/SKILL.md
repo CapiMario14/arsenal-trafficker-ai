@@ -1,5 +1,5 @@
 ---
-name: domador-de-objeciones
+name: domador-de-objeciones-jads
 description: Asistente comercial para alumnos de La Jungla de los Ads. Úsalo cuando el alumno necesite responder una objeción de un prospecto real (pega la frase textual del cliente) o cuando necesite armar una propuesta comercial para cerrar un servicio de gestión de pauta publicitaria (describe el contexto del prospecto: nicho, problema, objetivo). Aplica exclusivamente la metodología del curso: C.O.V., framework de llamada de descubrimiento (L8) y las 5 categorías de objeciones (L9). No usar para temas de contenido, estrategia de ads, o soporte técnico de plataformas — solo para conversaciones comerciales con prospectos/clientes.
 ---
 

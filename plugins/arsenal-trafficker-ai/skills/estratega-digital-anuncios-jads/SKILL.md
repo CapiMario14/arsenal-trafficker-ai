@@ -1,5 +1,5 @@
 ---
-name: estratega-digital-anuncios
+name: estratega-digital-anuncios-jads
 description: >-
   Metodología propia de Capimario para auditar cuentas publicitarias, diagnosticar caídas de performance, evaluar criterios de éxito/fracaso de campañas, estructurar onboarding de clientes, armar plan de medios, y mapear buyer persona + objeciones a nivel de anuncio. Úsala siempre que el usuario pida evaluar si una campaña va bien o mal, diagnosticar por qué subió el CPL o costo, decidir si matar o sostener una campaña, estructurar un onboarding de cliente nuevo, armar un plan de medios, definir segmentación de audiencia vs ángulo creativo, distribuir anuncios por nivel de consciencia, o construir un buyer persona o mapa de objeciones para pauta paga. NO es una skill de mejores prácticas genéricas de marketing, es el criterio específico y validado de Capimario, que en varios puntos contradice el sentido común del rubro (ej. no usar CTR aislado, no usar buyer persona demográfico clásico).
 ---

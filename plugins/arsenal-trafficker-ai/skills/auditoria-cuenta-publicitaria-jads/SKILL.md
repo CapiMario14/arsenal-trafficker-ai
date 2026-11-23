@@ -1,6 +1,6 @@
 ---
-name: auditoria-cuenta-publicitaria
-description: Auditoría inicial de una cuenta publicitaria (Meta, TikTok o Google Ads) que el trafficker hereda o recibe de un cliente nuevo, con la metodología de Capimario (La Jungla de los Ads). Revisa contexto y benchmark, tracking, estructura de campañas, rendimiento a lo largo del funnel y qué está funcionando, y entrega un diagnóstico con plan de acción. Úsala siempre que el usuario diga "audita esta cuenta", "revisa la cuenta que me pasó el cliente", "qué está mal en esta cuenta", "heredé una cuenta", "diagnóstico inicial", o pegue un export, capturas o datos de una cuenta que todavía no gestiona, aunque no diga "auditoría". NO es para la revisión semanal de campañas que el trafficker ya gestiona (eso es revision-de-campanas) ni para armar el plan de medios (eso es estratega-digital-anuncios).
+name: auditoria-cuenta-publicitaria-jads
+description: Auditoría inicial de una cuenta publicitaria (Meta, TikTok o Google Ads) que el trafficker hereda o recibe de un cliente nuevo, con la metodología de Capimario (La Jungla de los Ads). Revisa contexto y benchmark, tracking, estructura de campañas, rendimiento a lo largo del funnel y qué está funcionando, y entrega un diagnóstico con plan de acción. Úsala siempre que el usuario diga "audita esta cuenta", "revisa la cuenta que me pasó el cliente", "qué está mal en esta cuenta", "heredé una cuenta", "diagnóstico inicial", o pegue un export, capturas o datos de una cuenta que todavía no gestiona, aunque no diga "auditoría". NO es para la revisión semanal de campañas que el trafficker ya gestiona (eso es revision-de-campanas-jads) ni para armar el plan de medios (eso es estratega-digital-anuncios-jads).
 ---
 
 # Auditoría de cuenta publicitaria
@@ -106,6 +106,6 @@ Entrega el informe con estas secciones, en lenguaje claro y sin relleno:
 Indica el nivel de confianza de cada conclusión (**Confirmado** o **Hipótesis**). Si los datos no alcanzan para sacar una conclusión confiable, dilo en lugar de inventarla.
 
 ## Lo que esta skill NO hace
-- No arma el plan de medios ni define los ángulos nuevos: eso es `estratega-digital-anuncios`.
-- No hace la revisión semanal de campañas que ya gestionas: eso es `revision-de-campanas`.
-- No reporta la competencia: eso es `el-rastreador`.
+- No arma el plan de medios ni define los ángulos nuevos: eso es `estratega-digital-anuncios-jads`.
+- No hace la revisión semanal de campañas que ya gestionas: eso es `revision-de-campanas-jads`.
+- No reporta la competencia: eso es `el-rastreador-jads`.
