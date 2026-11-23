@@ -6,11 +6,10 @@ Este documento fija qué recibe y qué entrega cada skill del arsenal, para que 
 
 ```
 DIAGNÓSTICO                      ESTRATEGIA                         EJECUCIÓN
-Auditoría de negocio ─┐
-Auditoría de cuenta  ─┼─► Estratega Digital de Anuncios ─► Changuito / Copywriter / Landing
+Auditoría de cuenta  ─┬─► Estratega Digital de Anuncios ─► Changuito / Copywriter / Landing
 El Rastreador (CIF)  ─┘          ▲                          Revisor de pixel ─► Creador de Campañas
 Buscador de keywords ────────────┘                                   │
-                                  Revisión de campañas ◄─────────────┘ (ciclo semanal)
+                               Optimizador de campañas ◄─────────────┘ (ciclo semanal)
 ```
 
 ## Piezas compartidas (formato común)
@@ -50,7 +49,6 @@ Cada skill entrega su resultado con un bloque final llamado **"Para la siguiente
 
 | Skill | Recibe | Entrega | No hace |
 |---|---|---|---|
-| Auditoría de negocio | Datos del cliente | Ficha del negocio | No toca la cuenta publicitaria |
 | `auditoria-cuenta-publicitaria-jads` | Acceso por MCP + preguntas previas + export reducido del CRM | Reporte HTML + línea base (`linea-base-[cliente].md`) | No arma el plan de medios |
 | `el-rastreador-jads` | Ficha del negocio + competidores | Hallazgos de mercado | No evalúa anuncios propios |
 | Buscador de keywords | Ficha del negocio | Keywords agrupadas para Google | No arma campañas |

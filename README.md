@@ -26,8 +26,7 @@ Listo. Cuando publiquemos skills nuevas o mejoras, se actualizan desde aquí.
 
 | Fase | Skill | Para qué sirve | Estado |
 |---|---|---|---|
-| 1. Diagnóstico | Auditoría de negocio | Leer el negocio antes de pautar | Próximamente |
-| | `auditoria-cuenta-publicitaria-jads` | Auditoría completa con reporte HTML: resultados por mes, campañas, conjuntos, anuncios y pipeline comercial | ✅ |
+| 1. Diagnóstico | `auditoria-cuenta-publicitaria-jads` | Auditoría completa con reporte HTML: resultados por mes, campañas, conjuntos, anuncios y pipeline comercial | ✅ |
 | 2. Investigación | `el-rastreador-jads` | Investigación de mercado y competencia (CIF) | ✅ |
 | | Buscador de keywords | Keywords para Google Ads | Próximamente |
 | 3. Estrategia | `estratega-digital-anuncios-jads` | Onboarding, criterio de éxito, plan de medios, buyer persona y objeciones | ✅ |
